@@ -16,7 +16,7 @@
 <script type="text/javascript" src="script/AddCart.js"></script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<title>PCWorld: Login</title>
+<title>MobileWorld: Login</title>
 
 </head>
 <body>
@@ -42,8 +42,7 @@
         </div>
     <div>
     <br><hr>
-    <p>Sei Nuovo? Registrati subito!</p>
-    <a href="RegistrazioneView.jsp"><input type="button" value="Registrati"></a>
+    <p>Sei Nuovo?</p><a href="RegistrazioneView.jsp"><p1>Registrati</p1></a>
     </div>
     </form>
     </div>

@@ -27,7 +27,7 @@
 <div class="header" id="header">
 	<div class="logo">
 		<a href="./catalogo">
-			<img src="img/LOGO_DEFINITIVO_INVERTITO.png">
+			<img src="img/logoTelefoniDef.png">
 		</a>
 	</div>
 	
