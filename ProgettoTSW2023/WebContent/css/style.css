@@ -144,6 +144,11 @@ login {
     width: 100%;
 }
 
+.loginblock h1{
+	color: white;
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+}
+
 .loginblock {
     border: 2px;
     border-style: solid;
@@ -152,12 +157,32 @@ login {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 450px;
-    background-color: white;
+    height: 500px;
+    background-color: transparent;
     padding: 10px 10px 20px 10px;
+    border-radius: 20px;
+    border-color: white;
+    border-width: 10px;
+}
+.loginblock input{
+	margin-top: 30px;
 }
 
+
+
 .loginblock p {
+	margin-top: 70px;
     font-size: 22px;
+    color: white;
+}
+.loginblock p1 {
+    font-size: 19px;
+    color: white;
+}
+.loginblock p1:hover{
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 22px;
 }
 
 .Errorelogin {
