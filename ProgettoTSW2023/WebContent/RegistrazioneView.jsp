@@ -15,8 +15,7 @@
 </head>
 <body>
 <%@include file="topdown/header.jsp" %>
-<br>
-<div class="content">
+<div class="content" style="width: 100%; margin-top= 0px; height: 900px;background: url(./img-banner/Background-login.jpg) no-repeat center center fixed;background-size: cover;">
 	<div class="container">
 		<div class="registrazione-right">
 			<div class="registrazione-right-Hello">
@@ -34,17 +33,20 @@
 			            <span id="result1"></span>
 					</div>
 					<div class="inputRegi">
+						
 			            <input type="text" id="cgm" name="cgm" autofocus required placeholder="Cognome" onblur="checkCognome()"><br>
 			            <span id="result2"></span>
 					</div>
 					<div class="inputRegi">
+						
 			            <input type="text" id="email" name="email" autofocus required placeholder="Email" onblur="checkEmail()"><br>
 			            <span id="result3"></span> <span id="result4"></span>
 					</div>
 					<div class="inputRegi">
+						
 			            <input type="password" id="psw" name="psw" autofocus required placeholder="Password"><br><br>
 					</div>
-					<div class="btnRegistrati" style="width: 80">
+					<div class="btnRegistrati">
 			       	 	<input type="button" id="bottone" value="Registrati" >
 		    		</div>
 		    	</form>

@@ -87,7 +87,7 @@
 </div>
 
 <div class="navmenu">
-		<a href="catalogo">Home</a>
+		<a href="catalogo" style="text-decoration: none;">Home</a>
 		<div class="dropdown">
 			<a class="dropLink navmenuspacer">Catalogo</a>
 			<ul class="dropdown-contenuto">
@@ -116,7 +116,7 @@
 				<li><a href="./chooseType?tipologia=Webcam">Webcam</a></li>
 			</ul>
 		</div>
-		<a href="./ChiSiamo.jsp" class="navmenuspacer">Chi siamo</a>
+		<a href="./ChiSiamo.jsp" class="navmenuspacer" style="text-decoration: none;">Chi siamo</a>
 </div>
 <div class="menuSmartUser">
 	<img id ="btnOpenMenu"src="./img/MenuNav.png" width="30" height="30">

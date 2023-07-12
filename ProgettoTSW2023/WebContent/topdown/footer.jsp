@@ -10,10 +10,10 @@
 <body>
 <div class="footer"> 
 	<div class="footertext">
-		<p><b>Contatti:</b><br>CarParts.info@gmail.com</p>
+		<p><b>Contatti:</b><br>MobileWorld.info@gmail.com</p>
 	</div>
 	 <div class="copyright">
-        <p><b>© All copyright reserved to CarParts</b><p>
+        <p><b>© All copyright reserved to MobileWorld</b><p>
     </div>
 	<div class="metodiPagamento">
         <div class="metodo">
@@ -30,13 +30,13 @@
 	
 	<div class="socialdistance">
 		<div class="social">
-		<a href="https://www.instagram.com/pcworld_italia/" target="_blank"><img src="img/instagram-grigio.png" class="image" hspace="3"></a>
+		<a href="https://www.instagram.com" target="_blank"><img src="img/instagram-grigio.png" class="image" hspace="3"></a>
 		</div>
 		<div class="social">
-		<a href="https://www.facebook.com/groups/833165060604827" target="_blank"><img src="img/facebook-grigio.png" class="image" hspace="3"></a>
+		<a href="https://www.facebook.com" target="_blank"><img src="img/facebook-grigio.png" class="image" hspace="3"></a>
 		</div>
 		<div class="social">
-		<a href="https://twitter.com/PCWorld41611665" target="_blank"><img src="img/twitter-grigio.png" class="image" hspace="3"></a>
+		<a href="https://twitter.com" target="_blank"><img src="img/twitter-grigio.png" class="image" hspace="3"></a>
 		</div>
 	</div>
 </div>

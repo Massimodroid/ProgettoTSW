@@ -199,17 +199,19 @@ login {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: red;
 	margin: auto;
+	background-color: transparent;
+	border-color: black;
+	padding-top: 30px;
 }
 
 .container .registrazione-right{
 	width: 40%;
 	height: 100%;
-	background: linear-gradient(to right, #52d0e0,#000000 );
+	background-color:  #52d0e0;
 	padding: 30px 25px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
 	text-align: center;
 }
 
@@ -217,8 +219,8 @@ login {
 	width: 60%;
 	height: 100%;
 	background: #e9eceb;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 	padding: 30px 25px; 
 	 
 }
@@ -234,6 +236,12 @@ login {
 .container .registrazione-right .registrazione-right-Hello p{
 	font-size: 20px;
 }
+.container .registrazione-right .registrazione-right-Hello a:hover{
+	font-weight: bold;
+	transition: font-weight 1s;
+	color: blue;
+}
+
 
 
 
@@ -252,6 +260,8 @@ login {
  	font-size: 20px;
 	margin: auto;
 }
+
+
 /*Fine login-registrazione*/
 
 /*Ordini*/
@@ -1765,6 +1775,7 @@ display: none;
 	
 	.container .registrazione-left {
 		width: 100%;
+		background-color: #ffffff;
 		border-bottom-right-radius: 5px;
 		border-top-right-radius: 0px;
 		border-bottom-left-radius: 5px;
@@ -1772,7 +1783,7 @@ display: none;
 	
 	.container .registrazione-right {
 		width: 100%;
-		background: linear-gradient(to bottom, #6397d0,#e9eceb );
+		background-color: #52d0e0;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		border-bottom-left-radius: 0px;
@@ -1781,7 +1792,13 @@ display: none;
 	.container .registrazione-left 
 	.registrazione-left-input .inputRegi input{
 		width: 100%;
+		height: 35px;
+		font-size: 20px;
 	}
+	.container .registrazione-left 
+	.registrazione-left-input .inputRegi{
+	margin-top: 10px;
+}
 	
 	/*CompletaConfig Tablet*/
 	.inputBox {
