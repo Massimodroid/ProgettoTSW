@@ -934,6 +934,7 @@ navmenu a{
   height: 37px;
   border-radius: 5px 0 0 5px;
   outline: none;
+  margin-left: auto;
 
 }
 
@@ -1547,7 +1548,7 @@ display: none;
 	.header {
 		position: static;
 		background-color: #000000;
-		height: 150px;
+		height: 100px;
 		min-height: 100%;
 	}
 	.errore {
@@ -1588,13 +1589,13 @@ display: none;
 	.searchbox {
 		display: block;
 		float: none;
-		height: 0;
+		height: 40px;
 	}
 	
 	.search {
 		height: 40px;
 		width: 100%;
-		margin-top: 5px;
+		
 	}
 	
 	.ciaoutente {
