@@ -738,7 +738,7 @@ login {
 
 .navmenu{
 	text-decoration: none;
-	padding-top: 0px;
+	padding-top: 7px;
 	margin-bottom: 0px;
 	height: 40px;
 	width: 100%;
@@ -763,6 +763,7 @@ navmenu a{
 	color: white;
 	display: inline-block;
 	font-weight: bold;
+	padding-bottom: 4px;
 }
 /*DropMenu*/
 .dropLink {
@@ -1550,6 +1551,7 @@ display: none;
 		background-color: #000000;
 		height: 100px;
 		min-height: 100%;
+		padding-top: 1px;
 	}
 	.errore {
 		padding-bottom: 190px;
