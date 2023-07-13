@@ -21,7 +21,7 @@
 
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<title>PCWorld: Admin</title>
+<title>MobileWorld: Admin</title>
 </head>
 <body>
 <%@include file="../topdown/headerAdmin.jsp" %>

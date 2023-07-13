@@ -15,7 +15,7 @@
 <script type="text/javascript" src="script/countElem.js"></script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<title>PCWorld: Ordini</title>
+<title>MobileWorld: Ordini</title>
 </head>
 <body>
 <%@include file="topdown/header.jsp" %>

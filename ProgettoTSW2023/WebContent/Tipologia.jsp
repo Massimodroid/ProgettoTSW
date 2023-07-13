@@ -15,7 +15,7 @@
 
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<title>PCWorld: Tipologia</title>
+<title>MobileWorld: Tipologia</title>
 </head>
 <body>
 <%@include file="topdown/header.jsp" %>

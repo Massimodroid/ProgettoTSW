@@ -19,7 +19,7 @@
 
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<title>PCWorld: Dettagli <%=prodotto.getDescrizione() %></title>
+<title>MobileWorld: Dettagli <%=prodotto.getDescrizione() %></title>
 </head>
 <body>
 <%@include file="topdown/header.jsp" %>

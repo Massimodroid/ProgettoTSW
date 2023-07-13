@@ -9,7 +9,7 @@
 <script type="text/javascript" src="script/countElem.js"></script>
 <script type="text/javascript" src="script/jquery-3.5.1.min.js"></script>
 
-<title>PCWorld:Chi Siamo</title>
+<title>MobileWorld:Chi Siamo</title>
 </head>
 <body>
 <%@include file="topdown/header.jsp" %>

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<title>PCWorld: Admin-Ordini</title>
+<title>MobileWorld: Admin-Ordini</title>
 </head>
 <body>
 <%@include file="../topdown/headerAdmin.jsp" %>

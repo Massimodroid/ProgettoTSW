@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/style.css">
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<title>PCWorld: Admin-Modifica</title>
+<title>MobileWorld: Admin-Modifica</title>
 </head>
 <body>
 <%@include file="../topdown/headerAdmin.jsp" %>
