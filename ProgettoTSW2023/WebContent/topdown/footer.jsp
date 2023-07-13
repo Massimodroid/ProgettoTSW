@@ -17,7 +17,7 @@
     </div>
 	<div class="metodiPagamento">
         <div class="metodo">
-        <img src="img/MasterCard.png" class="image" hspace="3">
+        <img src="img/mastercard.png" class="image" hspace="3">
         </div>
         <div class="metodo">
         <img src="img/paypal.png" class="image" hspace="3">
@@ -29,16 +29,19 @@
 	
 	
 	<div class="socialdistance">
-		<div class="social">
-		<a href="https://www.instagram.com" target="_blank"><img src="img/instagram-grigio.png" class="image" hspace="3"></a>
+	    <div class="social">
+		<a href="https://twitter.com/" target="_blank"><img src="img/twitter.png" class="image" hspace="3"></a>
 		</div>
+		
 		<div class="social">
-		<a href="https://www.facebook.com" target="_blank"><img src="img/facebook-grigio.png" class="image" hspace="3"></a>
+		<a href="https://it-it.facebook.com/" target="_blank"><img src="img/facebook.png" class="image" hspace="3"></a>
 		</div>
+		
 		<div class="social">
-		<a href="https://twitter.com" target="_blank"><img src="img/twitter-grigio.png" class="image" hspace="3"></a>
+		<a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.png" class="image" hspace="3"></a>
 		</div>
 	</div>
+	
 </div>
 </body>
 </html>

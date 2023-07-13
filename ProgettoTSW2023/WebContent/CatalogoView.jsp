@@ -74,78 +74,84 @@
 	<br>
 	<h2>Most Wanted</h2>
 	<div class="prodotti">
-	<% 
-	int tmp = prodotti.size()/10;
-		if(prodotti != null && prodotti.size() != 0){
-			
-			for(int i=0 + index*10;i<index*10+10;i++) {
-				if(i<prodotti.size()){
-				ProdottoBean bean = (ProdottoBean) prodotti.get(i);
-	%>
-	<div class="product">
-		<h3><%=bean.getNome()%></h3>
-		<a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>">
-			<img src="<%=bean.getPath()%>" style="display: inline-block;" width="256px" height="256px" onmouseover="bigImg(this)" onmouseleave="normalImg(this)">
-		</a>
-		<div class="prezzo">€<%=bean.getPrezzo()%></div>
-		<script>
-			function bigImg(x) {
-			  x.style.height = "300px";
-			  x.style.width = "300px";
-			  x.style.border="1";
-			}
-			
-			function normalImg(x) {
-			  x.style.height = "256px";
-			  x.style.width = "256px";
-			}
-			</script>
-		<%if(bean.getQuantita()!=0){ %>
-			<div class="iconInfo"><a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image"></button></a></div>
-            <div id="addDiv" class="iconCart"><button id= "add" onclick="addTocart(<%=bean.getIdProdotto()%>),increment()"><img src="img/icon-cart.png" class="image"></button></div>
-				<script type="text/javascript"> 
-						function increment(){
-								$.ajax({
-									type: 'GET',
-									url: 'cartCount',
-									success: function(result){
-										$('#cont').html(result);
-									}
-								})
-						}
+	<%
+				Random random = new Random();
+				int productListSize = prodotti.size();
+				int maxIndex = Math.min(productListSize, 10); // Imposta il limite massimo per il numero di prodotti da visualizzare
+
+				if (prodotti != null && productListSize != 0) {
+					Set<Integer> randomIndexes = new HashSet<>();
+					while (randomIndexes.size() < maxIndex) {
+						int randomIndex = random.nextInt(productListSize);
+						randomIndexes.add(randomIndex);
+					}
+
+					for (int randomIndex : randomIndexes) {
+						ProdottoBean bean = (ProdottoBean) prodotti.get(randomIndex);
+			%>
+			<div class="product">
+				<h3><%= bean.getNome() %></h3>
+				<a href="./dettagli?tipologia=<%= bean.getTipologia() %>&id=<%= bean.getIdProdotto() %>">
+					<img src="<%= bean.getPath() %>" style="display: inline-block;" width="256px" height="256px" onmouseover="bigImg(this)" onmouseleave="normalImg(this)">
+				</a>
+				<div class="prezzo">€<%= bean.getPrezzo() %></div>
+				<script>
+					function bigImg(x) {
+						x.style.height = "300px";
+						x.style.width = "300px";
+						x.style.border="1";
+					}
+
+					function normalImg(x) {
+						x.style.height = "256px";
+						x.style.width = "256px";
+					}
 				</script>
-		<%}else{ %>
-			<div class="iconInfo"><a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image"></button></a></div>
-			<%} %>
-	</div>
-	
-	<% 
-			}
-			}}else{
-	%>
-	<div>
-		<div>Non ci sono prodotti</div>
-	</div>
-	<% 
-			}
-	%>
-	</div>
+				<% if(bean.getQuantita() != 0) { %>
+					<div class="iconInfo"><a href="./dettagli?tipologia=<%= bean.getTipologia() %>&id=<%= bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image"></button></a></div>
+					<div id="addDiv" class="iconCart"><button id="add" onclick="addTocart(<%= bean.getIdProdotto() %>), increment()"><img src="img/icon-cart.png" class="image"></button></div>
+					<script type="text/javascript">
+						function increment() {
+							$.ajax({
+								type: 'GET',
+								url: 'cartCount',
+								success: function(result) {
+									$('#cont').html(result);
+								}
+							})
+						}
+					</script>
+				<% } else { %>
+					<div class="iconInfo"><a href="./dettagli?tipologia=<%= bean.getTipologia() %>&id=<%= bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image"></button></a></div>
+				<% } %>
+			</div>
+			<%
+					}
+				} else {
+			%>
+			<div>
+				<div>Non ci sono prodotti</div>
+			</div>
+			<%
+				}
+			%>
+		</div>
 
 <br>
-	<h2>Most Viewed</h2>
+	<h2>Catalogo</h2>
 <br>
 <div class="gallery">
 	<div class="gallery__column">
-		<a href="https://unsplash.com/@jeka_fe" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=Apple" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/apple.jpg" alt="Portrait by Jessica Felicio" class="gallery__image">
+				<img src="indexImg/apple.jpg" class="gallery__image">
 				
 			</figure>
 		</a>
 
-		<a href="https://unsplash.com/@oladimeg" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=OnePlus" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/oneplus.jpg" alt="Portrait by Oladimeji Odunsi" class="gallery__image">
+				<img src="indexImg/oneplus.jpg" class="gallery__image">
 				
 			</figure>
 		</a>
@@ -153,78 +159,50 @@
 	</div>
 	
 	 <div class="gallery__column">
-		<a href="./chooseType?tipologia=Google" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=Google" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/google.jpg" alt="Portrait by Ivana Cajina" class="gallery__image">
+				<img src="indexImg/google.jpg" class="gallery__image">
 				
 			</figure>
 		</a>
 
-		<a href="https://unsplash.com/@samburriss" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=Samsung" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/samsung.jpg" alt="Portrait by Sam Burriss" class="gallery__image">
+				<img src="indexImg/samsung.jpg" class="gallery__image">
 			</figure>
 		</a>
 	</div>
 	
 	<div class="gallery__column">
-		<a href="https://unsplash.com/@ethanhaddox" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=Huawei" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/huawei.jpg" alt="Portrait by Ethan Haddox" class="gallery__image">
+				<img src="indexImg/huawei.jpg" class="gallery__image">
 			</figure>
 		</a>
 
-		<a href="https://unsplash.com/@mr_geshani" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=Asus" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/asus.jpg" alt="Portrait by Amir Geshani" class="gallery__image">
+				<img src="indexImg/asus.jpg" class="gallery__image">
 			</figure>
 		</a>
 	</div>
 	
 	<div class="gallery__column">
-		<a href="https://unsplash.com/@frxgui" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=Oppo" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/oppo.jpg" alt="Portrait by Guilian Fremaux" class="gallery__image">
+				<img src="indexImg/oppo.jpg" class="gallery__image">
 				
 			</figure>
 		</a>
 		
-		<a href="https://unsplash.com/@dimadallacqua" target="_blank" class="gallery__link">
+		<a href="./chooseType?tipologia=Xiaomi" target="_self" class="gallery__link">
 			<figure class="gallery__thumb">
-				<img src="indexImg/xiaomi.jpg" alt="Portrait by Dima DallAcqua" class="gallery__image">
+				<img src="indexImg/xiaomi.jpg" class="gallery__image">
 			
 			</figure>
 		</a>
 	</div>
 </div>
-
-<!-- 
-	<div class="index">
-		<%if(index>0){ %>
-		<a href="./catalogo?action=sub"><button>← Indietro</button></a>
-		<%}%>
-		<a href="./catalogo?action=set&index=1"><button>1</button></a> 
-		<a href="./catalogo?action=set&index=2"><button>2</button></a>
-		<a href="./catalogo?action=set&index=3"><button>3</button></a> 
-		<a href="./catalogo?action=set&index=4"><button>4</button></a>
-		<a href="./catalogo?action=set&index=5"><button>5</button></a> 
-		<a href="./catalogo?action=set&index=6"><button>6</button></a>
-		
-		<%if(index<5){ %>
-		<a href="./catalogo?action=add"><button>Avanti →</button></a>
-		<%}%>
-	</div>
-	
-	<div class="indexSmart">
-		<%if(index>0){ %>
-		<a href="./catalogo?action=sub"><button>← Indietro</button></a>
-		<%}%>
-		<%if(index<5){ %>
-		<a href="./catalogo?action=add"><button>Avanti →</button></a>
-		<%}%>
-	</div>
-	</div>
-	<br>-->
 	
 	<%@ include file="topdown/footer.jsp" %>
 	 
