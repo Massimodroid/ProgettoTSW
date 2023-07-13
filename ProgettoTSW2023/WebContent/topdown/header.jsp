@@ -91,29 +91,14 @@
 		<div class="dropdown">
 			<a class="dropLink navmenuspacer">Catalogo</a>
 			<ul class="dropdown-contenuto">
-					<li><div class="dropdown2">
-				<a class="dropLink2">Componenti</a>
-						<ul class="dropdown-contenuto3">
-							<li><a href="./chooseType?tipologia=Alimentatori">Alimentatori</a></li>
-							<li><a href="./chooseType?tipologia=Case">Case</a></li>
-							<li><a href="./chooseType?tipologia=CPU">CPU</a></li>
-							<li><a href="./chooseType?tipologia=Dissipatori">Dissipatori</a></li>
-							<li><a href="./chooseType?tipologia=Hard Disk">HDD</a></li>
-							<li><a href="./chooseType?tipologia=Scheda Madre">MotherBoard</a></li>
-							<li><a href="./chooseType?tipologia=RAM">Ram</a></li>
-							<li><a href="./chooseType?tipologia=SSD">SSD</a></li>
-						</ul>		
-				</div></li>
-				<li><div class="dropdown2">		
-					<a class="dropLink2" href="./chooseType?tipologia=Computer">Computer</a>
-						<ul class="dropdown-contenuto2">
-							<li><a href="./chooseType?tipologia=Computer&like=i3">i3</a></li>
-							<li><a href="./chooseType?tipologia=Computer&like=i5">i5</a></li>
-							<li><a href="./chooseType?tipologia=Computer&like=i7">i7</a></li>
-						</ul>	
-				</div></li>
-				<li><a href="./chooseType?tipologia=Monitor">Monitor</a></li>	
-				<li><a href="./chooseType?tipologia=Webcam">Webcam</a></li>
+				<li><a href="./chooseType?tipologia=Monitor">Apple</a></li>
+				<li><a href="./chooseType?tipologia=Monitor">Asus</a></li>	
+				<li><a href="./chooseType?tipologia=Webcam">Google</a></li>
+				<li><a href="./chooseType?tipologia=Webcam">Huawei</a></li>
+				<li><a href="./chooseType?tipologia=Webcam">OnePlus</a></li>
+				<li><a href="./chooseType?tipologia=Webcam">Oppo</a></li>
+				<li><a href="./chooseType?tipologia=Webcam">Samsung</a></li>
+				<li><a href="./chooseType?tipologia=Webcam">Xiaomi</a></li>
 			</ul>
 		</div>
 		<a href="./ChiSiamo.jsp" class="navmenuspacer" style="text-decoration: none;">Chi siamo</a>
@@ -123,38 +108,21 @@
 </div>
 <div id="menu" style="display:none;" class="menuSmartUserView">
 	  <a href="catalogo">Home</a>
+	  
 	  <a id="btnCat">Catalogo</a>
 			<div id="catShow" style="display: none;">
 			<ul class="btnCatDiv">
-					<li>
-				<a id="componentiShow">Componenti</a>
-					<div id="componentiShowDiv" style="display: none;">
-						<ul class="ulComponenti">
-							<li>•<a href="./chooseType?tipologia=Alimentatori">Alimentatori</a></li>
-							<li>•<a href="./chooseType?tipologia=Case">Case</a></li>
-							<li>•<a href="./chooseType?tipologia=CPU">CPU</a></li>
-							<li>•<a href="./chooseType?tipologia=Dissipatori">Dissipatori</a></li>
-							<li>•<a href="./chooseType?tipologia=Hard Disk">HDD</a></li>
-							<li>•<a href="./chooseType?tipologia=Scheda Madre">MotherBoard</a></li>
-							<li>•<a href="./chooseType?tipologia=RAM">Ram</a></li>
-							<li>•<a href="./chooseType?tipologia=SSD">SSD</a></li>
-						</ul>
-						</div>		
-				</li>
-				<li>	
-					<a id="computerShow">Computer</a>
-					<div id="computerShowDiv" style="display: none;">
-						<ul class="ulComputer">
-							<li>•<a href="./chooseType?tipologia=Computer&like=i3">i3</a></li>
-							<li>•<a href="./chooseType?tipologia=Computer&like=i5">i5</a></li>
-							<li>•<a href="./chooseType?tipologia=Computer&like=i7">i7</a></li>
-						</ul>	
-						</div>
-				</li>
-				<li><a href="./chooseType?tipologia=Monitor">Monitor</a></li>	
-				<li><a href="./chooseType?tipologia=Webcam">Webcam</a></li>
+				<li><a href="./chooseType?tipologia=Apple">Apple</a></li>
+				<li><a href="./chooseType?tipologia=Asus">Asus</a></li>	
+				<li><a href="./chooseType?tipologia=Google">Google</a></li>
+				<li><a href="./chooseType?tipologia=Huawei">Huawei</a></li>
+				<li><a href="./chooseType?tipologia=OnePlus">OnePlus</a></li>
+				<li><a href="./chooseType?tipologia=Oppo">Oppo</a></li>
+				<li><a href="./chooseType?tipologia=Samsung">Samsung</a></li>
+				<li><a href="./chooseType?tipologia=Xiaomi">Xiaomi</a></li>
 			</ul>
 			</div>
+		
 	  <a href="./ChiSiamo.jsp" class="navmenuspacer">Chi siamo</a>
 	  		
 </div>			
