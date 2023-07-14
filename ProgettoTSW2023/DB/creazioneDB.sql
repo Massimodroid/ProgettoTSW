@@ -42,7 +42,7 @@ create table Comporre(
 ID_Articolo int not null,
 ID_Ordine int not null,
 IVA double not null,
-Descrizione varchar(250) not null,
+Descrizione varchar(350) not null,
 Image varchar(250),
 Tipologia varchar(30) not null,
 Prezzo_Articolo double not null,

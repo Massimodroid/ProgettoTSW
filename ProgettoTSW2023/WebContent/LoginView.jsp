@@ -21,10 +21,10 @@
 </head>
 <body>
 <%@include file="topdown/header.jsp" %>
-<br>
+
 	 <div class="content">
     <div class="login">
-    <div style="width: 100%; height: 900px;background: url(./img-banner/Background-login.jpg) no-repeat center center fixed;background-size: cover;"></div>
+    <div class="sfondoLog" style="width: 100%; height: 1000px; background: url(./img-banner/Background-login.jpg) no-repeat center center fixed;background-size: cover; padding-left: 0px; padding-right: 0px;"></div>
 
     <div class="loginblock">
     <form action="./login" method="post" id="form">
@@ -51,7 +51,7 @@
         }%>
     </div>
     </div>
-<br>
+
 <%@ include file="topdown/footer.jsp" %>
 </body>
 </html>

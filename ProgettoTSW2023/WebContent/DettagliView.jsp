@@ -20,23 +20,29 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="img/favicon.png" />
  <link rel="stylesheet" href="prodotto.css">
+ <link rel="stylesheet" href="style.css">
 <title>MobileWorld: Dettagli <%=prodotto.getDescrizione() %></title>
 </head>
 <body>
 <%@include file="topdown/header.jsp" %>
+
+<div class="content">
 <div class = "card-wrapper">
       <div class = "card">
+      	<div class= "bloccoDes">
         <!-- card left -->
+        <div class= "bloccoDesSx">
         <div class = "product-imgs">
           <div class = "img-display">
             <div class = "img-showcase">
               <img src = "<%=prodotto.getPath()%>" alt = "shoe image">
-              
             </div>
           </div>
           
         </div>
+        </div>
         <!-- card right -->
+        <div class = "bloccoDesDx">
         <div class = "product-content">
           <h2 class = "product-title"><%=prodotto.getNome()%></h2>
          
@@ -62,8 +68,11 @@
           </div>
 
         </div>
+         </div>
+       </div>
       </div>
     </div>
+   </div>
 <%@include file="topdown/footer.jsp" %>
 
 </body>
