@@ -736,6 +736,7 @@ login {
     height: 55px;
 }
 
+
 .navmenu{
 	text-decoration: none;
 	padding-top: 6px;
@@ -765,7 +766,7 @@ navmenu a{
 	font-weight: bold;
 	padding-bottom: 4px;
 }
-/*DropMenu*/
+/*DropMenu
 .dropLink {
   text-decoration: none;
   padding-left: 5px;
@@ -814,9 +815,9 @@ navmenu a{
 
 .dropdown:hover .dropLink {
 	color: white;
-	font-weight: bold;}
+	font-weight: bold;}*/
 	
-	/*Drop Computer*/
+	/*Drop Computer
 	
 	.dropdown2 {
   position: relative;
@@ -913,7 +914,7 @@ navmenu a{
 	display: inline;
 	
 	
-	}
+	}*/
 /*Fine DropMenu*/
 
 

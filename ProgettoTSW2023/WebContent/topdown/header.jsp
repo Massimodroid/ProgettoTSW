@@ -88,19 +88,7 @@
 
 <div class="navmenu">
 		<a href="catalogo" style="text-decoration: none;">HOME</a>
-		<div class="dropdown">
-			<a class="dropLink navmenuspacer">Catalogo</a>
-			<ul class="dropdown-contenuto">
-				<li><a href="./chooseType?tipologia=Monitor">Apple</a></li>
-				<li><a href="./chooseType?tipologia=Monitor">Asus</a></li>	
-				<li><a href="./chooseType?tipologia=Webcam">Google</a></li>
-				<li><a href="./chooseType?tipologia=Webcam">Huawei</a></li>
-				<li><a href="./chooseType?tipologia=Webcam">OnePlus</a></li>
-				<li><a href="./chooseType?tipologia=Webcam">Oppo</a></li>
-				<li><a href="./chooseType?tipologia=Webcam">Samsung</a></li>
-				<li><a href="./chooseType?tipologia=Webcam">Xiaomi</a></li>
-			</ul>
-		</div>
+		
 		<a href="./ChiSiamo.jsp" class="navmenuspacer" style="text-decoration: none; padding-top:5px;">CHI SIAMO</a>
 </div>
 <div class="menuSmartUser">
