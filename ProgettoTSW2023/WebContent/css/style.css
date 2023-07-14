@@ -128,12 +128,6 @@ body {
 	display: none;
 }
 /*login-Registrazione*/
-login {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    background: url(./img-banner/Background-login.jpg) no-repeat center center fixed;
-}
 
 .login input {
     font-size: 20px;
@@ -1550,7 +1544,7 @@ display: none;
 	.header {
 		position: static;
 		background-color: #000000;
-		height: 100px;
+		height: 140px;
 		min-height: 100%;
 		padding-top: 1px;
 	}
@@ -2069,6 +2063,7 @@ display: none;
 	display:block;
 	padding-top: 10px;
 	padding-left: 10px;
+	width: 40px;
 	}
 	
 	.menuSmartUserView{
@@ -2081,23 +2076,6 @@ display: none;
 	font-size: 22px;
 	padding-left:10px;
 	}
-	
-	
-	.btnCatDiv, .ulComponenti, .ulComputer{
-		list-style: none;
-		padding: 0;
-		margin: 5px 0 5px 10px;
-	}
-	.ulComponenti li a, .ulComputer li a{
-		display: inline-block;
-		color:red;
-	}
-	
-	.btnCatDiv li a{
-		font-weight: bold;
-	}
-	
-	
 }
 /*Fine SmartPhone*/
 
