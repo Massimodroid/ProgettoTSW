@@ -1013,7 +1013,7 @@ navmenu a{
 	margin-bottom: 15px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #e0e0e0;
-	color: #daa520;
+	color: #52d0e0;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	
@@ -1033,14 +1033,14 @@ navmenu a{
 
 .wrapper .right .info_data .data h4,
 .wrapper .right .operazioni_data .data h4 {
-	color: #d4af37;
+	color: #52d0e0;
 	margin-bottom: 5px;
 	
 }
 
 .wrapper .right .info_data .data h4 a,
 .wrapper .right .operazioni_data .data h4 a{
-	color: #d4af37;
+	color: #52d0e0;
 	margin-bottom: 5px;
 	text-decoration: none;
 	
@@ -1048,7 +1048,7 @@ navmenu a{
 
 .wrapper .right .info_data .data h4 a:hover,
 .wrapper .right .operazioni_data .data h4 a:hover{
-	color: #d4af37;
+	color: #52d0e0;
 	margin-bottom: 5px;
 	text-decoration: none;
 	font-size: 20px;
@@ -1255,7 +1255,7 @@ navmenu a{
 
 .logoadmin img{
 	float:left;
-	width: 300px;
+	width: 120px;
 	padding-left:8px;
 	
 }
@@ -1314,16 +1314,15 @@ navmenu a{
 }
 
 .dropdownRicerca{
-	display:none;
-	position: absolute;
-	width: 340px;
-	background-color: #f1f1f1;
-	padding: 5px 10px 5px 5px;
-	margin-left: 0;
-	text-align: left;
-	
-	
+	 display: none;
+	 position: absolute;
+	 width: 340px;
+	 background-color: #f1f1f1;
+	 padding: 5px 10px 5px 5px;
+	 margin-left: 0;
+	 text-align:left;
 }
+
 .dropdownRicerca ul{
 	list-style-type: none;
 }
@@ -1634,9 +1633,8 @@ display: none;
         height: 160px;
         display: flex;
         flex-wrap: wrap;
-        
-	}
-	
+    }
+
     .footertext {
         float: none;
         text-align: center;
@@ -1927,7 +1925,6 @@ display: none;
 	
 	.footer {
         height: 300px;
-        
     }
 
     .footertext p{
@@ -2141,3 +2138,4 @@ Pannello Catalogo
 	 background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 100%);
 	 transition: 0.3s;
 }
+ 
