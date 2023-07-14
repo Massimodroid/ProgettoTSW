@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS tsw;
-CREATE DATABASE RicambiAuto;
-USE RicambiAuto;
+DROP DATABASE IF EXISTS smartphone;
+CREATE DATABASE smartphone;
+USE smartphone;
 
 create table Utente(
 ID int not null auto_increment,
@@ -13,12 +13,12 @@ Ruolo varchar(20) not null,
 primary key(ID)
 );
 
-use RicambiAuto;
+USE smartphone;
 create table Articolo(
 ID int not null auto_increment,
 Tipologia varchar(30) not null,
 Nome varchar(60) not null,
-Descrizione varchar(250) not null,
+Descrizione varchar(350) not null,
 Prezzo double not null,
 Quantita_Disponibile int not null,
 IVA double not null,
@@ -26,7 +26,7 @@ Image varchar(250),
 primary key (ID)
 );
 
-use RicambiAuto;
+USE smartphone;
 
 create table Ordine(
 ID int not null auto_increment,
@@ -36,7 +36,7 @@ ID_Utente int references Utente(ID),
 primary key(ID)
 );
 
-use RicambiAuto;
+USE smartphone;
 
 create table Comporre(
 ID_Articolo int not null,
@@ -53,7 +53,7 @@ on update cascade
 on delete cascade
 );
 
-use RicambiAuto;
+USE smartphone;
 
 create table Indirizzo(
 ID int not null,
@@ -69,7 +69,7 @@ on update cascade
 on delete cascade
 );
 
-use RicambiAuto;
+USE smartphone;
 
 create table Metodo_Pagamento(
 Codice_Segreto int not null,
@@ -79,7 +79,7 @@ Circuito varchar(50) not null,
 primary key(Codice_Segreto,Numero_Carta)
 );
 
-use RicambiAuto;
+USE smartphone;
 
 create table Valutazione(
 ID_Utente int not null,

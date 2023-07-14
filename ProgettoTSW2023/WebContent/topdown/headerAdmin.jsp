@@ -14,7 +14,7 @@
 
 		<div class="logoadmin">
 			<a href="admin">	
-				<img src="./img/LOGO_DEFINITIVO_INVERTITO.png">
+				<img src="./img/logoTelefoniDef.png">
 			</a>
 		</div>
 		<div class="benvenutoAdmin">

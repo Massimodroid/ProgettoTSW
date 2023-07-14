@@ -96,21 +96,6 @@
 </div>
 <div id="menu" style="display:none;" class="menuSmartUserView">
 	  <a href="catalogo">Home</a>
-	  
-	  <a id="btnCat">Catalogo</a>
-			<div id="catShow" style="display: none;">
-			<ul class="btnCatDiv">
-				<li><a href="./chooseType?tipologia=Apple">Apple</a></li>
-				<li><a href="./chooseType?tipologia=Asus">Asus</a></li>	
-				<li><a href="./chooseType?tipologia=Google">Google</a></li>
-				<li><a href="./chooseType?tipologia=Huawei">Huawei</a></li>
-				<li><a href="./chooseType?tipologia=OnePlus">OnePlus</a></li>
-				<li><a href="./chooseType?tipologia=Oppo">Oppo</a></li>
-				<li><a href="./chooseType?tipologia=Samsung">Samsung</a></li>
-				<li><a href="./chooseType?tipologia=Xiaomi">Xiaomi</a></li>
-			</ul>
-			</div>
-		
 	  <a href="./ChiSiamo.jsp" class="navmenuspacer">Chi siamo</a>
 	  		
 </div>			

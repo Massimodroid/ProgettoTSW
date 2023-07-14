@@ -1223,19 +1223,19 @@ navmenu a{
 }
 
 .chisiamo h1 {
-	color: #055566;
+	color: #4ECCDC;
 	text-align: center;
-	font-size:70px;
+	font-size:50px;
 	margin: 10px 0 0 0;
 }
 
 .chisiamo h2 {
-	color: #055566;
+	color: #4ECCDC;
 	font-size: 30px;
 }
 
-.chisiamo p, .chisiamo li {
-	font-size: 22px;
+.chisiamo p{
+	font-size: 20px;
 }
 
 /*Sezione Admin*/
@@ -2038,7 +2038,7 @@ display: none;
 	}
 	
 	.menuSmart button {
-		background: #e9eceb;
+		background: #52d0e0;
 		border: 1px solid white;
 		color:black;
 		font-size: 24px;
@@ -2057,7 +2057,7 @@ display: none;
 		display: block;
 		margin:8px auto auto auto;
 		width: 50%;
-		background-color: #e9eceb;
+		background-color: #52d0e0;
 		padding: 0px 5px 5px 5px;
 	}
 	
@@ -2072,7 +2072,7 @@ display: none;
 	}
 	
 	.menuSmartUserView{
-		background-color: #e9eceb;
+		background-color: #52d0e0;
 	}
 	
 	.menuSmartUserView a{
@@ -2102,7 +2102,7 @@ display: none;
 /*Fine SmartPhone*/
 
 /*-----------------------------
-Single
+Pannello Catalogo
 -----------------------------*/
 *{
   margin:0;
