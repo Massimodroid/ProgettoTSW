@@ -59,8 +59,8 @@
 			<a class="dropLink" id="ricerca">Ricerca ordini</a>
 			<div class="dropdownRicerca">
 			<ul>
-				<li ><button id="apri" style="border: none;">Ricerca Ordini Per Nome</button></li>
-				<li ><button type="button" id="apriData"style="border:none;color: #292929;">Ricerca Ordini Per Data</button></li>
+				<li ><button id="apri" style="border: none; background-color: black; color: white; ">Ricerca Ordini Per Nome</button></li>
+				<li ><button type="button" id="apriData"style="border: none; background-color: black; color: white;">Ricerca Ordini Per Data</button></li>
 			</ul>	
 			</div>
 		</div>	

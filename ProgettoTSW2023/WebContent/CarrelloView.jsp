@@ -44,14 +44,14 @@
 	<div class="imageCarrello"><img src="<%=bean.getPath()%>" style="float: left;" width="256px" height="256px"></div>
 	<div class="descrizioneCarrello"><h3 style="width: 80%; display: inline;"><%=beancart.getDescrizione()%></h3></div>
 	<div class="prezzoCarrello"><div class="prezzoresponsive">€<%=df.format(beancart.getPrezzoTotale())%></div></div>
-	<div class="dettaglipref"><p>Quantità disponibile:<%=bean.getQuantita()%></p>
+	<div class="dettaglipref"><p>QUANTITA':<%=bean.getQuantita()%></p>
 	<form action="./carrello" style="text-align: left;" method="get">
-            <input type="number" id="numCount" name="numCount" style="width: 40px;" name ="num" min="1" max="<%=bean.getQuantita()%>" placeholder="<%=beancart.getNumProdotto()%>">
+            <input type="number" class="numCount" name="numCount" style="width: 40px; padding:5px; border-radius: 5px;" name ="num" min="1" max="<%=bean.getQuantita()%>" placeholder="<%=beancart.getNumProdotto()%>">
             <input type="hidden" name="id" value="<%=bean.getIdProdotto() %>">
             <input type="hidden" name="op" value="cambiaQ">
-            <input type="submit" value="Aggiorna Quantità">
+            <input type="submit" class="AggQuant" value="Aggiorna Quantità">
     </form>
-    <div style="padding-top: 7px; text-align: left;">
+    <div class="rimuoviCarrello">
     <a href="./carrello?op=cancC&id=<%=beancart.getProdottoID() %>">Rimuovi</a>
     </div>
     </div>
@@ -59,7 +59,7 @@
     
 	<%tot += beancart.getPrezzoTotale();} %>
 	</div>
-	<div style="float: right; width: 20%; border: 2px solid black; margin: 10px 10px 10px 10px;">
+	<div style="float: right; height:180px; width: 20%; border-radius: 10px; background-color: #e9eceb; border: 2px solid ; margin: 10px 10px 10px 10px;">
     <div style="display: inline;">
     <h3 style="margin-bottom: 0;">Totale:</h3>
     <p style="font-style:oblique; font-size: 15px; margin-top: 5px; margin-bottom: 10px;">Comprende l'IVA</p>

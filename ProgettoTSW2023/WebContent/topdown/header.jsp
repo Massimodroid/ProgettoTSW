@@ -87,9 +87,9 @@
 </div>
 
 <div class="navmenu">
-		<a href="catalogo" style="text-decoration: none;">HOME</a>
+		<a href="catalogo" style="text-decoration: none; padding-right: 10px;">HOME</a>
 		
-		<a href="./ChiSiamo.jsp" class="navmenuspacer" style="text-decoration: none; padding-top:5px;">CHI SIAMO</a>
+		<a href="./ChiSiamo.jsp" class="navmenuspacer" style="text-decoration: none">CHI SIAMO</a>
 </div>
 <div class="menuSmartUser">
 	<img id ="btnOpenMenu"src="./img/MenuNav.png" width="30" height="30">
