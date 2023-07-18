@@ -5,7 +5,7 @@
 		
     %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@page import="it.unisa.model.bean.UserBean"  %>
 <%@page import="it.unisa.model.Carrello"  %>
@@ -36,7 +36,7 @@
    		 <div class="search">
      		 <input type="search" class="searchTerm" placeholder="Ricerca..." name = "search" autocomplete="off">
      		 <button type="submit" class="searchButton">
-      			 <img src="./img/search.png">
+      			 <img src="./img/search.png" alt="Immagine ricerca">
     		 </button>
   		 </div>
 	</form>
@@ -60,14 +60,14 @@
 	
 	<a href="carrello">
 		
-		<img src="img/carrello.png" class="image" >
+		<img src="img/carrello.png" class="image" alt="Immagine Carrello">
 	</a>
 	</div>
 	<div class="utente" class="image">
 <%if(us == null || !us.isValid()){ %>
 
 	<a href="./LoginView.jsp">
-		<img src="img/utente.png" id="UserImage" class="image">
+		<img src="img/utente.png" id="UserImage" class="image" alt="Immagine Utente">
 	</a>
 <%} %>
 	</div>
@@ -92,7 +92,7 @@
 		<a href="./ChiSiamo.jsp" class="navmenuspacer" style="text-decoration: none">CHI SIAMO</a>
 </div>
 <div class="menuSmartUser">
-	<img id ="btnOpenMenu"src="./img/MenuNav.png" width="30" height="30">
+	<img id ="btnOpenMenu"src="./img/MenuNav.png" width="30" height="30" alt="Immagine NavMenu">
 </div>
 <div id="menu" style="display:none;" class="menuSmartUserView">
 	  <a href="catalogo">Home</a>

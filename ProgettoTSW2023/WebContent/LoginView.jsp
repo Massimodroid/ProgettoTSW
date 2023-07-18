@@ -7,7 +7,7 @@
     %>
     
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.bean.*,it.unisa.model.*"%>
 <head>
 <link rel="stylesheet" href="css/style.css">
@@ -42,7 +42,7 @@
         </div>
     <div>
     <br><hr>
-    <p>Sei Nuovo?</p><a href="RegistrazioneView.jsp"><p1>Registrati</p1></a>
+    <p>Sei Nuovo?</p><a href="RegistrazioneView.jsp"><h2>Registrati</h2></a>
     </div>
     </form>
     </div>

@@ -6,7 +6,7 @@
     	CartaBean carta = (CartaBean) request.getAttribute("carta");
     %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.bean.*,it.unisa.model.*"%>
 <head>
 <link rel="stylesheet" href="css/style.css">
@@ -23,7 +23,7 @@
 <%if(user.getNumeroCarta()!=null){ %>
 	<div class="wrapper">
 		<div class="left">
-			<img src="./img/UserBlank.png" width="250" height="250">
+			<img src="./img/UserBlank.png" width="250" height="250" alt="Immagine User">
 			<h3><%=user.getNome() %> <%=user.getCognome() %></h3>
 		</div>
 		<div class="right">
@@ -71,7 +71,7 @@
 <%}else{ %>
 	<div class="wrapper">
 		<div class="left">
-			<img src="./img/UserBlank.png" width="250" height="250">
+			<img src="./img/UserBlank.png" width="250" height="250" alt="Immagine Utente">
 			<h3><%=user.getNome() %> <%=user.getCognome() %></h3>
 		</div>
 		<div class="right">
