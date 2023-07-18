@@ -6,7 +6,7 @@
    		ArrayList<?> comms = (ArrayList<?>) request.getAttribute("commenti");
     %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <%@ page contentType="text/html; charset=UTF-8" import="it.unisa.model.bean.*, java.util.*"%>
 <head>
 
@@ -149,7 +149,7 @@
 			
 		<div class="comsUtenti">
 			<div class="areaCommento">
-					<div class="imgComm"><img src="./img/UserBlank.png" width="60px" height="60px"></div>
+					<div class="imgComm"><img src="./img/UserBlank.png" width="60px" height="60px" alt="Immagine Commento"></div>
 					<h4>
 					<%=val.getNome() %> 
 					<%=val.getCognome() %></h4>

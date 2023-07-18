@@ -4,7 +4,7 @@
     Collection<?> prodotti = (Collection<?>) request.getAttribute("prodotti");
     %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.bean.ProdottoBean,it.unisa.model.dao.ProdottoDAO,java.sql.*"%>
 <head>
 <link rel="stylesheet" href="css/style.css">
@@ -31,14 +31,15 @@
 	%>
 	<div class="product">
 		<fieldset>
+		<legend>Tipologia Prodotto</legend>
 		<p><%=bean.getNome()%></p>
-		<img src="<%=bean.getPath()%>" style="display: inline-block;" width="256px" height="256px">
+		<img src="<%=bean.getPath()%>" style="display: inline-block;" width="256px" height="256px" alt="Immagine Prodotto">
 		€<%=bean.getPrezzo()%>
 		<%if(bean.getQuantita()!=0){ %>
-			<div class="iconInfo"><a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image"></button></a></div>
-            <div class="iconCart"><button id= "add" onclick="addTocart(<%=bean.getIdProdotto()%>),increment()"><img src="img/icon-cart.png" class="image"></button></div>
+			<div class="iconInfo"><a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image" alt="Immagine Icona"></button></a></div>
+            <div class="iconCart"><button id= "add" onclick="addTocart(<%=bean.getIdProdotto()%>),increment()"><img src="img/icon-cart.png" class="image" alt="Icona AddCarrello" ></button></div>
 		<%}else{ %>
-			<div class="iconInfo"><a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image"></button></a></div>
+			<div class="iconInfo"><a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image" alt="Immagine Icona"></button></a></div>
 			<%} %>
 		</fieldset>
 	</div>

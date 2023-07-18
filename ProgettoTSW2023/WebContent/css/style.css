@@ -19,7 +19,6 @@ body {
 	min-height: 100%; 
     position: relative;
     background-color: white;
-	min-height: 100vh;
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -167,11 +166,11 @@ body {
     font-size: 22px;
     color: white;
 }
-.loginblock p1 {
+.loginblock h2 {
     font-size: 19px;
     color: white;
 }
-.loginblock p1:hover{
+.loginblock h2:hover{
 	text-decoration: underline;
 	font-weight: bold;
 	font-size: 22px;
@@ -832,7 +831,8 @@ body {
 	text-align: left;
 }
 
-navmenu a{
+/*
+.navmenu a{
 	text-decoration: none;
 	padding-left: 12px;
 	color: #292929;
@@ -841,6 +841,7 @@ navmenu a{
 	font-family: "Georgia", serif;
 	text-transform: capitalize;
 }
+*/
 
 .navmenu a:hover{
 	color: white;
@@ -1626,7 +1627,6 @@ display: none;
 	text-align: center;
 	padding-bottom: 10%;
 	background-color: #e9eceb;
-	padding-bottom: 75px;
 }
 
 
