@@ -172,9 +172,9 @@ function checkNumero(){
 
 function check(obj){
 	let check = true;
-	if(checkNome()==false) check=false;
-	if(checkCognome()==false) check=false;
-	if(checkEmail()==false) check=false;
+	if(!checkNome()) check=false;
+	if(!checkCognome()) check=false;
+	if(!checkEmail()) check=false;
 	if(check)obj.submit();
 }
 

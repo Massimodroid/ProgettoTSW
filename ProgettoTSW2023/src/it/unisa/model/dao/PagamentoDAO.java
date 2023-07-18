@@ -50,7 +50,7 @@ public class PagamentoDAO {
 	        user.setNumeroCarta(carta.getNumeroCarta());
 	        
 	    } catch (SQLException e) {
-	        // Gestisci l'eccezione o lanciala per la gestione superiore
+	        
 	        throw e;
 	    }
 	}

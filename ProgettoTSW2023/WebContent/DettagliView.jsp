@@ -79,9 +79,6 @@
    	</div>	 
     
     
-  	
-<!--   <div class="center-line"><hr></div><br>  -->
-    
     
     <div class="BloccoRec">
     
@@ -92,13 +89,6 @@
 	    	<textarea rows="5" cols="40"id="commento" maxlength="200" style= "resize: none;" placeholder="Max 200 Caratteri" ></textarea><br>
 	    	<input type="button" onclick="sendCom()" value ="Invia"><br><br>
 	    
-	   
- <!--     <script>
-			function refreshPage() {
-			  location.reload();
-			}
-		</script>
-		-->
 		
 	    <span id="notLogin"></span>
 		<div class="notlogRec">
