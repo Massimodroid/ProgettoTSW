@@ -14,14 +14,14 @@
 
 		<div class="logoadmin">
 			<a href="admin">	
-				<img src="./img/logoTelefoniDef.png">
+				<img src="./img/logoTelefoniDef.png" alt="Logo Smarthphone">
 			</a>
 		</div>
 		<div class="benvenutoAdmin">
 			<h3>Benvenuto Admin</h3>
 		</div>
 		<div class="iconAdmin">
-			<img src="./img/Admin.png">
+			<img src="./img/Admin.png" alt="Icona admin">
 		</div>
 					
 		<div class="menuSmart">
