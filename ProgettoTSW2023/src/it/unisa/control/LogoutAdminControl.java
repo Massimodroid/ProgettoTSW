@@ -21,6 +21,9 @@ public class LogoutAdminControl extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//function doPost per connettersi alla servlet
+		
 	}
 
 }

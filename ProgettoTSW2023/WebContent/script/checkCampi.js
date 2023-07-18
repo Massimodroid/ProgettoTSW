@@ -57,7 +57,7 @@ function checkEmail(){
 
 function checkCods(){
 	let input = document.getElementsByName("codS")[0];
-	let check = /^[0-9]+$/;
+	let check = /^[/d]+$/;
 	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#codS').css("border","1px solid red");
@@ -76,7 +76,7 @@ function checkCods(){
 
 function checkNumCarta(){
 	let input = document.getElementsByName("numCarta")[0];
-	let check = /^[0-9]+$/;
+	let check = /^[/d]+$/;
 	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#numCarta').css("border","1px solid red");

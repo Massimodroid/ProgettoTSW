@@ -30,22 +30,22 @@ public class LoginControl extends HttpServlet {
 						sessione.setAttribute("Utente", user);
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");
 						dispatcher.forward(request, response);
-						return;
+						
 					}
 					else if (user.getRuolo().equalsIgnoreCase("admin") && user.isValid()){
 						HttpSession sessione = request.getSession(true);
 						sessione.setAttribute("admin", user);
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/Admin.jsp");
 						dispatcher.forward(request, response);
-						return;
+						
 					}
 				}
 				else {
-						String Alert = "Email o Password errata";
-						request.setAttribute("Alert", Alert);
+						String ALERT = "Email o Password errata";
+						request.setAttribute("Alert", ALERT);
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/LoginView.jsp");
 						dispatcher.forward(request, response);
-						return;
+						
 				}
 				
 		}catch(Throwable e) {

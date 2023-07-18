@@ -1236,7 +1236,6 @@ body {
 
 
 /*Slider*/
-* {box-sizing: border-box;}
 
 .mySlides {
 	display: none;
@@ -2108,7 +2107,12 @@ display: none;
 /*-----------------------------
 Pannello Catalogo
 -----------------------------*/
-
+*{
+  margin:0;
+  padding:0;
+  font-family: "Georgia", serif;
+  box-sizing: border-box;
+}
 
 
 .panel__copy{max-width: 800px; margin: 0px auto; margin-top: -60px; background: #fff; padding:20px 40px;position: relative; z-index: 1}
