@@ -137,42 +137,31 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 
 	@Override
 	public ArrayList<ProdottoBean> doRetrieveAll() throws SQLException {
-		Connection con = null;
-		PreparedStatement prS = null;
-		ResultSet result;
-		ArrayList<ProdottoBean> prodotti = new ArrayList<ProdottoBean>();
-		
-		String SelectSQL = "Select * from " + TABLE_NAME;
+	    ArrayList<ProdottoBean> prodotti = new ArrayList<>();
 
-		try {
-		con = ds.getConnection();
-		prS = con.prepareStatement(SelectSQL);
-		result = prS.executeQuery();
-		
-		while(result.next()) {
-		ProdottoBean bean = new ProdottoBean();
-		bean.setIdProdotto(result.getInt("ID"));
-		bean.setTipologia(result.getString("Tipologia"));
-		bean.setNome(result.getString("Nome"));
-		bean.setDescrizione(result.getString("Descrizione"));
-		bean.setPrezzo(result.getDouble("Prezzo"));
-		bean.setQuantita(result.getInt("Quantita_Disponibile"));
-		bean.setIva(result.getDouble("IVA"));
-		bean.setPath(result.getString("Image"));
-		
-		prodotti.add(bean);
-		}
-			}finally {
-				try {
-					if (prS != null)
-						prS.close();
-				}finally {
-					if (con != null)
-						con.close();
-				}
-			}
-		return prodotti;
-		}
+	    try (Connection con = ds.getConnection();
+	         PreparedStatement prS = con.prepareStatement("SELECT * FROM " + TABLE_NAME);
+	         ResultSet result = prS.executeQuery()) {
+
+	        while (result.next()) {
+	            ProdottoBean bean = new ProdottoBean();
+	            bean.setIdProdotto(result.getInt("ID"));
+	            bean.setTipologia(result.getString("Tipologia"));
+	            bean.setNome(result.getString("Nome"));
+	            bean.setDescrizione(result.getString("Descrizione"));
+	            bean.setPrezzo(result.getDouble("Prezzo"));
+	            bean.setQuantita(result.getInt("Quantita_Disponibile"));
+	            bean.setIva(result.getDouble("IVA"));
+	            bean.setPath(result.getString("Image"));
+
+	            prodotti.add(bean);
+	        }
+	    }
+
+	    return prodotti;
+	}
+
+	
 	public void refreshQuantitaTot(int id, int quanti) throws SQLException{
 		Connection con = null;
 		PreparedStatement prS = null;
