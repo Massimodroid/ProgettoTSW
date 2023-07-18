@@ -37,23 +37,38 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 	
 	@Override
 	public void doSave(ProdottoBean prodotto) throws SQLException {
-	    String insertSQL = "INSERT INTO " + TABLE_NAME + " (Tipologia, Nome, Descrizione, Prezzo, Quantita_Disponibile, IVA, Image) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-	    try (Connection con = ds.getConnection();
-	         PreparedStatement prS = con.prepareStatement(insertSQL)) {
-
-	        prS.setString(1, prodotto.getTipologia());
-	        prS.setString(2, prodotto.getNome());
-	        prS.setString(3, prodotto.getDescrizione());
-	        prS.setDouble(4, prodotto.getPrezzo());
-	        prS.setInt(5, prodotto.getQuantita());
-	        prS.setDouble(6, prodotto.getIva());
-	        prS.setString(7, prodotto.getPath());
-
-	        prS.executeUpdate();
-	    }
+		Connection con = null;
+		PreparedStatement prS = null;
+		String insertSQL = "Insert into "+ TABLE_NAME +" (Tipologia,Nome,Descrizione,Prezzo,Quantita_Disponibile,IVA,Image)"
+				+ " values(?,?,?,?,?,?,?)";
+		
+		try {
+			con = ds.getConnection();
+			prS = con.prepareStatement(insertSQL);
+			
+			prS.setString(1, prodotto.getTipologia());
+			prS.setString(2,prodotto.getNome());
+			prS.setString(3, prodotto.getDescrizione());
+			prS.setDouble(4, prodotto.getPrezzo());
+			prS.setInt(5, prodotto.getQuantita());
+			prS.setDouble(6, prodotto.getIva());
+			prS.setString(7, prodotto.getPath());
+			
+			prS.executeUpdate();
+			
+		}finally {
+			try {
+				if(prS != null)
+					prS.close();
+				
+			}finally {
+				if(con != null)
+					con.close();
+				
+			}
+		}
+		
 	}
-
 	
 	@Override
 	public boolean doDelete(int code) throws SQLException {
@@ -122,30 +137,42 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 
 	@Override
 	public ArrayList<ProdottoBean> doRetrieveAll() throws SQLException {
-	    ArrayList<ProdottoBean> prodotti = new ArrayList<>();
+		Connection con = null;
+		PreparedStatement prS = null;
+		ResultSet result;
+		ArrayList<ProdottoBean> prodotti = new ArrayList<ProdottoBean>();
+		
+		String SelectSQL = "Select * from " + TABLE_NAME;
 
-	    try (Connection con = ds.getConnection();
-	         PreparedStatement prS = con.prepareStatement("SELECT * FROM " + TABLE_NAME);
-	         ResultSet result = prS.executeQuery()) {
-
-	        while (result.next()) {
-	            ProdottoBean bean = new ProdottoBean();
-	            bean.setIdProdotto(result.getInt("ID"));
-	            bean.setTipologia(result.getString("Tipologia"));
-	            bean.setNome(result.getString("Nome"));
-	            bean.setDescrizione(result.getString("Descrizione"));
-	            bean.setPrezzo(result.getDouble("Prezzo"));
-	            bean.setQuantita(result.getInt("Quantita_Disponibile"));
-	            bean.setIva(result.getDouble("IVA"));
-	            bean.setPath(result.getString("Image"));
-
-	            prodotti.add(bean);
-	        }
-	    }
-
-	    return prodotti;
-	}
-
+		try {
+		con = ds.getConnection();
+		prS = con.prepareStatement(SelectSQL);
+		result = prS.executeQuery();
+		
+		while(result.next()) {
+		ProdottoBean bean = new ProdottoBean();
+		bean.setIdProdotto(result.getInt("ID"));
+		bean.setTipologia(result.getString("Tipologia"));
+		bean.setNome(result.getString("Nome"));
+		bean.setDescrizione(result.getString("Descrizione"));
+		bean.setPrezzo(result.getDouble("Prezzo"));
+		bean.setQuantita(result.getInt("Quantita_Disponibile"));
+		bean.setIva(result.getDouble("IVA"));
+		bean.setPath(result.getString("Image"));
+		
+		prodotti.add(bean);
+		}
+			}finally {
+				try {
+					if (prS != null)
+						prS.close();
+				}finally {
+					if (con != null)
+						con.close();
+				}
+			}
+		return prodotti;
+		}
 	
 	public void refreshQuantitaTot(int id, int quanti) throws SQLException{
 		Connection con = null;
