@@ -621,6 +621,7 @@ body {
 
 .payCart{
 	margin-top: 20px;
+	overflow: hidden;
 }
 .payCart a{
     font-size: 20px;

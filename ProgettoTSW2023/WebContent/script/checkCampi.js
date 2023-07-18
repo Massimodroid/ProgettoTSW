@@ -20,7 +20,7 @@ function checkNome(){
 
 function checkCognome(){
 	var input = document.getElementsByName("cgm")[0];
-	var check = /^[A-Za-z]+$/;
+	var check = /^[A-Za-z\s]+$/;
 	var esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#cgm').css("border","1px solid red");
