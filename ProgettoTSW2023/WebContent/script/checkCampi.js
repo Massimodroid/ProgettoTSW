@@ -180,11 +180,11 @@ function check(obj){
 
 function check2(obj){
 	let check = true;
-	if(checkCods()==false) check=false;
-	if(checkNumCarta()==false) check=false;
-	if(checkData()==false) check=false;
-	if(checkCitta()==false) check=false;
-	if(checkVia()==false) check=false;
-	if(checkNumero()==false) check=false;
+	if(!checkCods()) check=false;
+	if(!checkNumCarta()) check=false;
+	if(!checkData()) check=false;
+	if(!checkCitta()) check=false;
+	if(!checkVia()) check=false;
+	if(!checkNumero()) check=false;
 	if(check)obj.submit();
 }
