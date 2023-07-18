@@ -37,38 +37,23 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 	
 	@Override
 	public void doSave(ProdottoBean prodotto) throws SQLException {
-		Connection con = null;
-		PreparedStatement prS = null;
-		String insertSQL = "Insert into "+ TABLE_NAME +" (Tipologia,Nome,Descrizione,Prezzo,Quantita_Disponibile,IVA,Image)"
-				+ " values(?,?,?,?,?,?,?)";
-		
-		try {
-			con = ds.getConnection();
-			prS = con.prepareStatement(insertSQL);
-			
-			prS.setString(1, prodotto.getTipologia());
-			prS.setString(2,prodotto.getNome());
-			prS.setString(3, prodotto.getDescrizione());
-			prS.setDouble(4, prodotto.getPrezzo());
-			prS.setInt(5, prodotto.getQuantita());
-			prS.setDouble(6, prodotto.getIva());
-			prS.setString(7, prodotto.getPath());
-			
-			prS.executeUpdate();
-			
-		}finally {
-			try {
-				if(prS != null)
-					prS.close();
-				
-			}finally {
-				if(con != null)
-					con.close();
-				
-			}
-		}
-		
+	    String insertSQL = "INSERT INTO " + TABLE_NAME + " (Tipologia, Nome, Descrizione, Prezzo, Quantita_Disponibile, IVA, Image) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+	    try (Connection con = ds.getConnection();
+	         PreparedStatement prS = con.prepareStatement(insertSQL)) {
+
+	        prS.setString(1, prodotto.getTipologia());
+	        prS.setString(2, prodotto.getNome());
+	        prS.setString(3, prodotto.getDescrizione());
+	        prS.setDouble(4, prodotto.getPrezzo());
+	        prS.setInt(5, prodotto.getQuantita());
+	        prS.setDouble(6, prodotto.getIva());
+	        prS.setString(7, prodotto.getPath());
+
+	        prS.executeUpdate();
+	    }
 	}
+
 	
 	@Override
 	public boolean doDelete(int code) throws SQLException {
