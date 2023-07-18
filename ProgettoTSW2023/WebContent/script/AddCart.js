@@ -1,6 +1,6 @@
 function addTocart(i){
-					var op = "aggC";
-					var id = i;
+					let op = "aggC";
+					let id = i;
 					$.ajax({
 						type: 'GET',
 						data:{op:op,id:id},

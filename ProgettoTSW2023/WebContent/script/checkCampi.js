@@ -1,7 +1,7 @@
 function checkNome(){
-	var input = document.getElementsByName("nm")[0];
-	var check = /^[A-Za-z]+$/;
-	var esito;
+	let input = document.getElementsByName("nm")[0];
+	let check = /^[A-Za-z]+$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#nm').css("border","1px solid red");
 		$('#result1').css("display","inline");
@@ -19,9 +19,9 @@ function checkNome(){
 }
 
 function checkCognome(){
-	var input = document.getElementsByName("cgm")[0];
-	var check = /^[A-Za-z\s]+$/;
-	var esito;
+	let input = document.getElementsByName("cgm")[0];
+	let check = /^[A-Za-z\s]+$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#cgm').css("border","1px solid red");
 		$('#result2').css("display","inline");
@@ -38,9 +38,9 @@ function checkCognome(){
 }
 
 function checkEmail(){
-	var input = document.getElementsByName("email")[0];
-	var check = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-	var esito;
+	let input = document.getElementsByName("email")[0];
+	let check = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#email').css("border","1px solid red");
 		$('#result4').css("display","inline");
@@ -56,9 +56,9 @@ function checkEmail(){
 }
 
 function checkCods(){
-	var input = document.getElementsByName("codS")[0];
-	var check = /^[0-9]+$/;
-	var esito;
+	let input = document.getElementsByName("codS")[0];
+	let check = /^[0-9]+$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#codS').css("border","1px solid red");
 		$('#resultCodS').css("display","inline");
@@ -75,9 +75,9 @@ function checkCods(){
 }
 
 function checkNumCarta(){
-	var input = document.getElementsByName("numCarta")[0];
-	var check = /^[0-9]+$/;
-	var esito;
+	let input = document.getElementsByName("numCarta")[0];
+	let check = /^[0-9]+$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#numCarta').css("border","1px solid red");
 		$('#resultNumCarta').css("display","inline");		
@@ -93,10 +93,10 @@ function checkNumCarta(){
 }
 
 function checkData(){
-	var input = document.getElementsByName("data")[0];
-	var check = new Date();
-	var res = check.toISOString().slice(0,10);
-	var esito;
+	let input = document.getElementsByName("data")[0];
+	let check = new Date();
+	let res = check.toISOString().slice(0,10);
+	let esito;
 	if(input.value<res){
 		$('#data').css("border","1px solid red");
 		$('#resultData').css("display","inline");
@@ -113,9 +113,9 @@ function checkData(){
 }
 
 function checkCitta(){
-	var input = document.getElementsByName("citta")[0];
-	var check = /^[A-Za-z]+$/;
-	var esito;
+	let input = document.getElementsByName("citta")[0];
+	let check = /^[A-Za-z]+$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#citta').css("border","1px solid red");
 		$('#resultCitta').css("display","inline");
@@ -132,9 +132,9 @@ function checkCitta(){
 }
 
 function checkVia(){
-	var input = document.getElementsByName("via")[0];
-	var check = /^[A-Za-z\s]+$/;
-	var esito;
+	let input = document.getElementsByName("via")[0];
+	let check = /^[A-Za-z\s]+$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		
 		$('#via').css("border","1px solid red");
@@ -152,9 +152,9 @@ function checkVia(){
 }
 
 function checkNumero(){
-	var input = document.getElementsByName("NCivico")[0];
-	var check = /^[0-9]+$/;
-	var esito;
+	let input = document.getElementsByName("NCivico")[0];
+	let check = /^[/d]+$/;
+	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#NCivico').css("border","1px solid red");
 		$('#resultCivico').css("display","inline");
@@ -171,7 +171,7 @@ function checkNumero(){
 }
 
 function check(obj){
-	var check = true;
+	let check = true;
 	if(checkNome()==false) check=false;
 	if(checkCognome()==false) check=false;
 	if(checkEmail()==false) check=false;
@@ -179,7 +179,7 @@ function check(obj){
 }
 
 function check2(obj){
-	var check = true;
+	let check = true;
 	if(checkCods()==false) check=false;
 	if(checkNumCarta()==false) check=false;
 	if(checkData()==false) check=false;

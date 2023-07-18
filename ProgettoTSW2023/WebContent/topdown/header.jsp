@@ -27,7 +27,7 @@
 <div class="header" id="header">
 	<div class="logo">
 		<a href="./catalogo">
-			<img src="img/logoTelefoniDef.png">
+			<img src="img/logoTelefoniDef.png" alt="Logo Sito">
 		</a>
 	</div>
 	
