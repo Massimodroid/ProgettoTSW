@@ -6,7 +6,7 @@
     
     
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.bean.*,it.unisa.model.*"%>
 <head>
 <link rel="stylesheet" href="css/style.css">
@@ -24,7 +24,7 @@
 
 	<form class="formCompleta" action="./inserimento" method="post" onsubmit="event.preventDefault();check2(this)">
 	<div class="titoloCompleta">
-	<img src="./img/completaAccount.png" style="float: left;">
+	<img src="./img/completaAccount.png" alt = "Immagine profilo" style="float: left;">
 		<h3>Completa la tua Registrazione</h3>
 	</div>	
 		<div class="dettagliUtenti">

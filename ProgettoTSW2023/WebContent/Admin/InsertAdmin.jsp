@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
 <link rel="stylesheet" href="css/style.css">
 <script type="text/javascript" src="script/jquery-3.5.1.min.js"></script>
@@ -19,8 +19,8 @@
 		
 			<div class="insertImage">
 				<input type="file" accept="image" id="url" name="image" style="display: none;">
-				<img id="upload" width="250" height="250" style="margin: 0;padding: 0;display: none;">
-				<img id="addProdotto" src="./img/AddIcon.png" width="100px" height="100" style="margin:30%;">
+				<img id="upload" alt = "" width="250" height="250" style="margin: 0;padding: 0;display: none;">
+				<img id="addProdotto" alt = "Immagine aggiungi prodotto" src="./img/AddIcon.png" width="100px" height="100" style="margin:30%;">
 				<script type="text/javascript">
 				$('#addProdotto').click(function(){ $('#url').trigger('click'); });
 				const fileInput = document.getElementById('url');

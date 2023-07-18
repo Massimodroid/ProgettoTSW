@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
 <link rel="stylesheet" href="css/style.css">
 <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 <body>
 <%@include file="topdown/header.jsp" %>
 <div class="chisiamoimage">
-<img src="./img-banner/chisiamo.png" height="400" width="100%">
+<img src="./img-banner/chisiamo.png" alt = "Immagine logo" height="400" width="100%">
 </div>
 <div class="content chisiamo">
 <h1>CHI SIAMO</h1>

@@ -6,7 +6,7 @@
     	UserBean utente = (UserBean) request.getSession().getAttribute("Utente");
     %>
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.bean.*,it.unisa.model.*,java.lang.Math,java.text.DecimalFormat
 "%>
 <head>
@@ -41,7 +41,7 @@
 		%>
 	<hr>
 	<div class="cartblock">
-	<div class="imageCarrello"><img src="<%=bean.getPath()%>" style="float: left;" width="256px" height="256px"></div>
+	<div class="imageCarrello"><img src="<%=bean.getPath()%>" alt = "Immagine carrello" style="float: left;" width="256px" height="256px"></div>
 	<div class="descrizioneCarrello"><h3 style="width: 80%; display: inline;"><%=beancart.getDescrizione()%></h3></div>
 	<div class="prezzoCarrello"><div class="prezzoresponsive">€<%=df.format(beancart.getPrezzoTotale())%></div></div>
 	<div class="dettaglipref"><p>QUANTITA':<%=bean.getQuantita()%></p>

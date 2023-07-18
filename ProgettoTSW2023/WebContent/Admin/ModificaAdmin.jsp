@@ -6,7 +6,7 @@
     %>
     
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@page import="java.util.*,it.unisa.model.bean.*" %>
 <head>
@@ -21,7 +21,7 @@
 <h2 style="text-align: center;">Modifica Prodotto</h2><br>
 	<div class="modificaAdmin">
 	<div class="modificaAdminDettagli">
-		<img src="<%=bean.getPath()%>" >
+		<img src="<%=bean.getPath()%>" alt = "Immagine prodotto">
 		
 			<form action="./modifica" method="get">
 				<div class="modificaInput">

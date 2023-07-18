@@ -5,7 +5,7 @@
    		ProdottoDAO model = new ProdottoDAO();
     %>
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.bean.*,it.unisa.model.dao.ProdottoDAO,java.text.DecimalFormat
 "%>
 
@@ -35,14 +35,14 @@
                     tot=prodotto.getPrezzo()*quantita;
         %>
     <div class="dettagliOrdine">
-		<img src="<%=prodotto.getPath()%>" style="display:inline-block; float:left; padding-left: 20px;" width="256px" height="256px">
+		<img src="<%=prodotto.getPath()%>" alt = "Immagine prodotto" style="display:inline-block; float:left; padding-left: 20px;" width="256px" height="256px">
 		<div class="descrizioneOrdini"><h3>Descrizione</h3><%=prodotto.getDescrizione()%></div>
 		<div class="infodescrizioneOrdini">
 			<div class="prezzodescrizioneOrdini">€<%=df.format(tot)%></div>
 			<%if(prodotto.getQuantita() == 0) {%>
 			<h4>Quantità non disponibile</h4>
 			<%}else if(prodotto.getQuantita()>=1){ %>
-			<div class="iconCart" id="desc"><button id= "add" onclick="addTocart(<%=prodotto.getIdArticolo()%>),increment()"><img src="img/icon-cart.png" class="image"></button></div>
+			<div class="iconCart" id="desc"><button id= "add" onclick="addTocart(<%=prodotto.getIdArticolo()%>),increment()"><img src="img/icon-cart.png" alt = "Immagine carrello" class="image"></button></div>
 			<script type="text/javascript"> 
 						function increment(){
 								$.ajax({

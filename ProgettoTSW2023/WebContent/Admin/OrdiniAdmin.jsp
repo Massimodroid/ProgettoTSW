@@ -6,7 +6,7 @@
     
     %>
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.bean.*,it.unisa.model.*,it.unisa.model.dao.*,java.text.DecimalFormat
 "%>
 
@@ -37,7 +37,7 @@
 			<hr>
 			<div class="statodettagli">
 			<p> Stato: <%=ordine.getStato() %><p>
-			<div class="iconInfo" style="float:none;"><a href="./ordiniAdmin?op=dettagli&id=<%=ordine.getIdOrdine() %>"><button><img src="img/icona-info.png" class="image"></button> Info prodotti</a></div>
+			<div class="iconInfo" style="float:none;"><a href="./ordiniAdmin?op=dettagli&id=<%=ordine.getIdOrdine() %>"><button><img src="img/icona-info.png" alt = "Immagine info" class="image"></button> Info prodotti</a></div>
 			
 			</div>
 			</div>				
