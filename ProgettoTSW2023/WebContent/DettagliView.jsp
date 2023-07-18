@@ -9,7 +9,7 @@
 <html>
 <%@ page contentType="text/html; charset=UTF-8" import="it.unisa.model.bean.*, java.util.*"%>
 <head>
-<link rel="stylesheet" href="css/style.css">
+
 <script type="text/javascript" src="script/jquery-3.5.1.min.js"></script>
 
 <script type="text/javascript" src="script/countElem.js"></script>
@@ -72,7 +72,114 @@
        </div>
       </div>
     </div>
+    <!-- Recensioni -->
+    
+    <div class="recensioniW" >
+   		 <label style="">Recensioni</label>
+   	</div>	 
+    
+    <!--  
+  	
+    <div class="center-line"><hr></div><br>
+    -->
+    
+    <div class="BloccoRec">
+    
+    <!-- Blocco inserimento recensione e controllo se utente loggato o meno -->
+    
+	    <div class="BloccoRecSx">
+	    	<label>Scrivi qui la tua recensione</label><br>
+	    	<textarea rows="5" cols="40"id="commento" maxlength="200" style= "resize: none;" placeholder="Max 200 Caratteri" ></textarea><br>
+	    	<input type="button" onclick="sendCom()" value ="Invia"><br><br>
+	    
+	    <!--  
+	    <script>
+			function refreshPage() {
+			  location.reload();
+			}
+		</script>
+		-->
+		
+	    <span id="notLogin"></span>
+		<div class="notlogRec">
+		<script type="text/javascript">
+			$('#allcomm').click(function(){
+				$('#allCom').css("display","flex");
+				$('#hideLink').css("display","block");
+				$('#inserisciCom').css("display","none");
+			})
+		</script>
+		
+		<script type="text/javascript">
+		function sendCom(){
+			var com = $("#commento").val();
+			var idProd = <%=prodotto.getIdProdotto()%>;
+			$.ajax({
+				type: 'GET',
+				data: {commento:com,prod:idProd},
+				url: 'comControl',
+				success: function(result){
+					if(result==1){
+						//var popup = document.getElementById("myPopup");
+						//popup.classList.toggle("show");
+						$('#commento').val('');
+						location.reload();
+					}
+					else if(result == 0){
+						$('#notLogin').css("color","red").html("Esegui il login o Registrati");		
+						$('#commento').val('');
+						
+					}
+					
+				}
+				
+			})
+		}
+	</script>
+		</div>
+		<br>
+		<div class="avviso"><label style="color:grey; font-style: italic; font-size:15px;">*Massimo una recensione a prodotto</label></div>
+	 </div>   
+	     <!-- Blocco di tutte le recensioni e dovuti controlli -->
+	     
+	     <div class="BloccoRecDx">
+			     <%if(comms.size()>0){ %>	
+			<%for(int i=0;i<comms.size();i++){ 
+				CommentoBean val = (CommentoBean) comms.get(i);%>
+			
+		<div class="comsUtenti">
+			<div class="areaCommento">
+					<div class="imgComm"><img src="./img/UserBlank.png" width="60px" height="60px"></div>
+					<h4>
+					<%=val.getNome() %> 
+					<%=val.getCognome() %></h4>
+					<span><%=val.getData() %></span>
+					<p><%=val.getCommento() %></p>
+			</div>
+		</div>
+			
+				<%} %>
+				
+			<%}else{ %>
+		<p>Non ci sono Commenti </p>
+		<%} %>
+		</div>	
+		
+			<div id="hideLink" style="display: none;">	
+				<a id="hide" href="">Nascondi</a>
+			</div>	
+			<script type="text/javascript"> 
+				$('#hide').click(function(){
+				$('#allCom').css("display","none");
+			})
+			</script>
+			    
+	    </div>
+    
+    
+    
    </div>
+   
 <%@include file="topdown/footer.jsp" %>
 
 </body>

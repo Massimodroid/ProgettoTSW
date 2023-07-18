@@ -34,7 +34,7 @@
 	<div class="searchbox">
 	 <form action="./chooseType" method="get">
    		 <div class="search">
-     		 <input type="search" class="searchTerm" placeholder="Ricerca..." name = "search">
+     		 <input type="search" class="searchTerm" placeholder="Ricerca..." name = "search" autocomplete="off">
      		 <button type="submit" class="searchButton">
       			 <img src="./img/search.png">
     		 </button>

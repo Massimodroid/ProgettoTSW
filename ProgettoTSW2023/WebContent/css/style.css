@@ -419,6 +419,8 @@ body {
 	margin-top: 15px;
 }
 
+/*
+
 .comProd a{
 	text-decoration: none;
 	font-size: 20px;
@@ -448,6 +450,8 @@ body {
 	margin: 10px 10px 10px 10px;
 }
 /*CheckPop*/
+
+
 .popupimg{
 	display: none;
 	
@@ -479,15 +483,13 @@ body {
 
 .comsUtenti{
 	display: block;
-	width: 30%;
+	width: 100%;
+	
 }
-.areaCom{
-	max-width: 500px;
-	min-width: 400px;
-}
-.inserisciCom textarea{
+.imgComm{
 	display: inline-block;
-	margin: auto;
+	width: 60px;
+	height: 60px;
 	
 }
 
@@ -501,6 +503,10 @@ body {
 	width: 100%;
 	display: block;
 	margin:auto;
+}
+
+.areaCommento{
+	overflow-y: auto;
 }
 
 .areaCommento h4{
@@ -534,10 +540,13 @@ body {
 }
 
 .areaCommento{
-	border: 2px solid;
+	border: 2px solid black;
+	border-radius: 10px;
 	background-color: white;
 	padding: 5px 10px 10px 10px;
 }
+
+
 /*Fine descrizione prodotto*/
 
 /*Carrello*/
@@ -1619,6 +1628,8 @@ display: none;
 	padding-bottom: 75px;
 }
 
+
+
 /*style="text-decoration: none*/
 @media screen and (max-width: 1000px) {
 	.header {
@@ -1765,75 +1776,10 @@ display: none;
 	.descrizioneCarrello h3{
 		font-size: 0.91em;
 	}
-	/*Dettagli da Tablet*/
 	
-	.dettagli {
-		height: 100%;
-		min-height: 290px;
-		max-height: 700px;
-	}
+
 	
-	.descrizione {
-		display: inline-block;
-		float: none;
-		width: 100%;
-		height: 100%;
-		margin-top: 0;
-	}
-	
-	.descrizione h3 {
-		margin-top: 0;
-	}
-	
-	.descrizioneimage {
-		display: block;
-		float: left;
-		width: 256px;
-		height: 100%;
-	}
-	
-	.bloccodescrizione {
-		float:left;
-		display: inline-block;
-		width: 65%;
-		min-height: 290px;
-	}
-	
-	.infodescrizione {
-		display:inline-block;
-		width: 35%;
-	}
-	
-	.prezzodescrizione {
-		display:block;
-		width:230px;
-		margin-right:0;
-		margin-left:0;
-		padding: 1px 1px 1px 1px;
-	}
-	
-	.inserisciCom textarea {
-		width: 80%;
-	}
-	
-	.imgComm{
-	display:block;
-		margin:auto;
-		width:90%;
-		height:60px;
-		float:none;
-	}
-	.imgComm img{
-	display:block;
-		margin:auto;
-		height:60px;
-		float:none;
-	}
-	
-	.areaCommento h4{
-		margin-top:5px;
-	}
-	
+
 	
 	/*UserLogged Tablet*/
 	
@@ -2231,4 +2177,22 @@ Pannello Catalogo
 	 background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 100%);
 	 transition: 0.3s;
 }
- 
+
+
+
+
+/*	Descrizione prodotto modifica */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
