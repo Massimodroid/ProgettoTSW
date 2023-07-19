@@ -17,6 +17,8 @@ import it.unisa.model.bean.*;
 public class AdminControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String PRODOTTI = "prodotti";
+	private static final String ERRORE_ADMIN = "Errore Admin Control";
+	
 	private static final ProdottoDAO modelProd = new ProdottoDAO();
 	private static final ComponiDAO modelComponi = new ComponiDAO();
 	Logger logger = Logger.getLogger(AdminControl.class.getName());
@@ -33,7 +35,7 @@ public class AdminControl extends HttpServlet {
 					prodotti = modelProd.doRetrieveAll();
 				} catch (SQLException e) {
 					
-					logger.log(null, () -> "Errore Admin Control: " + e.getMessage());
+					logger.log(null,() -> ERRORE_ADMIN + e.getMessage());
 
 
 					e.printStackTrace();
@@ -51,7 +53,7 @@ public class AdminControl extends HttpServlet {
 							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/ModificaAdmin.jsp");
 							dispatcher.forward(request, response);
 						} catch (SQLException e) {
-							logger.log(null,"Errore Admin Control: "+e.getMessage());
+							logger.log(null, () -> ERRORE_ADMIN + e.getMessage());
 
 							e.printStackTrace();
 						}
@@ -66,7 +68,7 @@ public class AdminControl extends HttpServlet {
 								request.setAttribute("componi", componi);
 							}
 						} catch (SQLException e) {
-							logger.log(null,"Errore Admin Control: "+e.getMessage());
+							logger.log(null, () -> ERRORE_ADMIN + e.getMessage());
 
 							e.printStackTrace();
 						}
