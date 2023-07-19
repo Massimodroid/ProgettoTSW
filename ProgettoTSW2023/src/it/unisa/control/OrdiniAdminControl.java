@@ -43,7 +43,7 @@ public class OrdiniAdminControl extends HttpServlet {
 					request.setAttribute("ordini", ordini);
 				}
 			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "Errore ordini Admin Control: " + e.getMessage(), e);
+				logger.log(Level.SEVERE, () -> "Errore Ordini Admin Control: " + e.getMessage());
 			}
 		}
 		if(op.equalsIgnoreCase("ricercaN")){
@@ -58,7 +58,7 @@ public class OrdiniAdminControl extends HttpServlet {
 				return;
 				
 			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "Errore ordini Admin Control: " + e.getMessage(), e);
+				logger.log(Level.SEVERE, () -> "Errore Ordini Admin Control: " + e.getMessage());
 			}
 		}
 		if(op.equalsIgnoreCase("dettagli")) {
@@ -67,7 +67,7 @@ public class OrdiniAdminControl extends HttpServlet {
 			try {
 				bean = model.doRetrieveByKey(id);
 			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+				logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 			}
 			request.setAttribute("componi", bean);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/DettagliAdmin.jsp");
@@ -83,7 +83,7 @@ public class OrdiniAdminControl extends HttpServlet {
 				dispatcher.forward(request, response);
 				return;
 			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+				logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 			}
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/OrdiniAdmin.jsp");

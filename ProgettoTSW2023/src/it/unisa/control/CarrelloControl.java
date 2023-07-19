@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -87,7 +88,7 @@ public class CarrelloControl extends HttpServlet {
 					
 					
 				} catch (SQLException e) {
-					logger.log(null,() -> "Errore Carrello Control" + e.getMessage());
+					logger.log(Level.SEVERE, () -> "Errore Carrello Control: " + e.getMessage());
 					
 				}
 				carrello.deleteAll();

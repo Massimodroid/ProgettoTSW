@@ -42,7 +42,7 @@ public class ChooseTypeControl extends HttpServlet {
 				return;
 			}
 		} catch (SQLException e) {
-			logger.log(Level.SEVERE, "Errore in ChooseTypeControl: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "Errore in Choose Type Control" + e.getMessage());
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");
 		dispatcher.forward(request, response);

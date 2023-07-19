@@ -56,7 +56,7 @@ public class DettagliControl extends HttpServlet {
 			request.setAttribute("commenti", commenti);
 		} catch (SQLException e) {
 			
-			logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 		}
 		Carrello carrello = (Carrello) request.getSession().getAttribute("carrello");
 		if (carrello == null) {

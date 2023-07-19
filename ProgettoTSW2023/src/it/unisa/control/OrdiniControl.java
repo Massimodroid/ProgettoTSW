@@ -33,7 +33,7 @@ public class OrdiniControl extends HttpServlet {
 			request.setAttribute("ordini", ordini);
 			
 		} catch (SQLException e) {
-			logger.log(Level.SEVERE, "Errore OrdiniControl: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "Errore OrdiniControl: " + e.getMessage());
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrdiniView.jsp");
 		dispatcher.forward(request, response);

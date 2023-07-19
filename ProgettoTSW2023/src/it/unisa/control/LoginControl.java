@@ -53,7 +53,7 @@ public class LoginControl extends HttpServlet {
 				}
 				
 		}catch(Throwable e) {
-			logger.log(Level.SEVERE, "Errore LoginControl: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "Errore Login Control: " + e.getMessage());
 		}
 		
 	

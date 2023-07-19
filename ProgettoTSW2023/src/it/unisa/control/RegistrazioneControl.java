@@ -38,7 +38,7 @@ public class RegistrazioneControl extends HttpServlet {
 			request.getSession().setAttribute("Utente", user);
 		}catch(SQLException e) {
 			
-			logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");
 		dispatcher.forward(request, response);	

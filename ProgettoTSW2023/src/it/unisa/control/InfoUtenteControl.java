@@ -36,7 +36,7 @@ public class InfoUtenteControl extends HttpServlet {
 			
 		} catch (SQLException e) {
 			
-			logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/UserLoggedView.jsp");
 		dispatcher.forward(request, response);

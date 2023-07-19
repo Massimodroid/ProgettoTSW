@@ -53,7 +53,7 @@ public class AdminControl extends HttpServlet {
 							dispatcher.forward(request, response);
 							
 						} catch (SQLException e) {
-							logger.log(Level.SEVERE, ERRORE_ADMIN + e.getMessage(), e);
+							logger.log(Level.SEVERE, () -> ERRORE_ADMIN + e.getMessage());
 						}
 						
 					}
@@ -66,7 +66,7 @@ public class AdminControl extends HttpServlet {
 								request.setAttribute("componi", componi);
 							}
 						} catch (SQLException e) {
-							logger.log(Level.SEVERE, ERRORE_ADMIN + e.getMessage(), e);
+							logger.log(Level.SEVERE, () -> ERRORE_ADMIN + e.getMessage());
 						}
 					}
 					else if(op.equalsIgnoreCase("elimina")) {
@@ -81,7 +81,7 @@ public class AdminControl extends HttpServlet {
 							return;
 							
 						} catch (SQLException e) {
-							logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+							logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 						}
 					}else if(op.equalsIgnoreCase("insert")) {
 						stato=false;

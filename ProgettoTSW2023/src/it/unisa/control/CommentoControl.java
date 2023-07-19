@@ -41,7 +41,7 @@ public class CommentoControl extends HttpServlet {
 				model.doSave(val);
 			} catch (SQLException e) {
 				
-				logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+				logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 			}
 			
 			

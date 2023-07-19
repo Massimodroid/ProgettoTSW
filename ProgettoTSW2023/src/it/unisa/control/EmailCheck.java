@@ -42,7 +42,7 @@ public class EmailCheck extends HttpServlet {
 			
 			
 		} catch (SQLException e) {
-			logger.log(Level.SEVERE, "Errore CheckMail: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "Errore CheckMail: " + e.getMessage());
 		}
 		
 		

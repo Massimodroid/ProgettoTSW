@@ -54,7 +54,7 @@ public class ModificaAdminControl extends HttpServlet {
 			}
 		}
 		catch(SQLException e) {
-			logger.log(Level.SEVERE, "Errore modifica Admin Control: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "Errore Modifica Admin Control: " + e.getMessage());
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin");
 		dispatcher.forward(request, response);

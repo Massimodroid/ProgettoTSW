@@ -36,7 +36,7 @@ public class InsertAdminControl extends HttpServlet {
 		try {
 			modelProd.doSave(bean);
 		} catch (SQLException e) {
-			logger.log(Level.SEVERE, "Errore insert Admin Control: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "Errore insert Admin Control: " + e.getMessage());
 		}
 		
 		

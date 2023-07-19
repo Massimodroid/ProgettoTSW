@@ -32,7 +32,7 @@ public class CatalogoControl extends HttpServlet {
             request.removeAttribute("prodotti");
             request.setAttribute("prodotti", model.doRetrieveAll());
         } catch (SQLException e) {
-        	logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
+        	logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
         }
 
         String action = request.getParameter("action");

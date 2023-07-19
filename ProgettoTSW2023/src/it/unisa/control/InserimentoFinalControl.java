@@ -65,7 +65,7 @@ public class InserimentoFinalControl extends HttpServlet {
 		modelIndirizzo.doSave(indirizzo,user);
 		
 		} catch (SQLException e) {
-			logger.log(Level.SEVERE, "Errore inserimento Final Control: " + e.getMessage(), e);
+			logger.log(Level.SEVERE, () -> "Errore Inserimento Final Control: " + e.getMessage());
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");
 		dispatcher.forward(request, response);
