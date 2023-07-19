@@ -33,7 +33,8 @@ public class AdminControl extends HttpServlet {
 					prodotti = modelProd.doRetrieveAll();
 				} catch (SQLException e) {
 					
-					logger.log(null, "Errore Admin Control: %s", e.getMessage());
+					logger.log(null, () -> "Errore Admin Control: " + e.getMessage());
+
 
 					e.printStackTrace();
 				}
@@ -50,7 +51,7 @@ public class AdminControl extends HttpServlet {
 							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/ModificaAdmin.jsp");
 							dispatcher.forward(request, response);
 						} catch (SQLException e) {
-							logger.log(null, "Errore Admin Control: %s", e.getMessage());
+							logger.log(null,"Errore Admin Control: "+e.getMessage());
 
 							e.printStackTrace();
 						}
@@ -65,7 +66,7 @@ public class AdminControl extends HttpServlet {
 								request.setAttribute("componi", componi);
 							}
 						} catch (SQLException e) {
-							logger.log(null, "Errore Admin Control: %s", e.getMessage());
+							logger.log(null,"Errore Admin Control: "+e.getMessage());
 
 							e.printStackTrace();
 						}
