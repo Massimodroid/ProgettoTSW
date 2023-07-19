@@ -2,7 +2,7 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
-
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +17,8 @@ import it.unisa.model.dao.ProdottoDAO;
 
 public class InsertAdminControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(InsertAdminControl.class.getName());
+	
 	private static final ProdottoDAO modelProd = new ProdottoDAO();
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +35,7 @@ public class InsertAdminControl extends HttpServlet {
 		try {
 			modelProd.doSave(bean);
 		} catch (SQLException e) {
-			System.out.println("Errore Admin Control:"+e.getMessage());
+			logger.log(null,() -> "Errore Insert Admin Control: " + e.getMessage());
 			e.printStackTrace();
 		}
 		

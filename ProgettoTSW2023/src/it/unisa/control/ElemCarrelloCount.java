@@ -21,7 +21,7 @@ public class ElemCarrelloCount extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Carrello cart = (Carrello) request.getSession().getAttribute("carrello");
 		PrintWriter out = response.getWriter();
-		if(cart==null || cart.getAllItem().size()==0) {
+		if(cart==null || cart.getAllItem().isEmpty()) {
 			response.setContentType("text/html");
 			out.print(0);
 		}else {

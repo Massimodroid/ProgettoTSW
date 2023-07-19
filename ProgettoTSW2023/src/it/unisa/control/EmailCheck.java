@@ -3,6 +3,7 @@ package it.unisa.control;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +16,13 @@ import it.unisa.model.bean.UserBean;
 
 public class EmailCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(EmailCheck.class.getName());
+	
 	private static final UserDAO model = new UserDAO();
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Metodo vuoto - Nessuna implementazione richiesta per questa servlet
 	}
 
 	
@@ -37,7 +41,7 @@ public class EmailCheck extends HttpServlet {
 			
 			
 		} catch (SQLException e) {
-			System.out.println("Errore EmailCheck: "+e.getMessage());
+			logger.log(null,() -> "Errore CheckMail" + e.getMessage());
 		}
 		
 		

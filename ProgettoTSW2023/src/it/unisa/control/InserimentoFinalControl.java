@@ -3,6 +3,7 @@ package it.unisa.control;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,13 +18,15 @@ import it.unisa.model.dao.PagamentoDAO;
 
 public class InserimentoFinalControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(InserimentoFinalControl.class.getName());
+	
        private static final PagamentoDAO modelPagamento = new PagamentoDAO();
        private static final IndirizzoDAO modelIndirizzo = new IndirizzoDAO();
   
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// Metodo vuoto - Nessuna implementazione richiesta per questa servlet
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -61,7 +64,7 @@ public class InserimentoFinalControl extends HttpServlet {
 		modelIndirizzo.doSave(indirizzo,user);
 		
 		} catch (SQLException e) {
-			System.out.println("Errore Inserimeto Final Control:"+e.getMessage());
+			logger.log(null,() -> "Errore Inserimento Final Control: " + e.getMessage());
 			e.printStackTrace();
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");

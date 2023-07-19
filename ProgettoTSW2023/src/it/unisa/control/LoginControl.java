@@ -4,6 +4,7 @@ import it.unisa.model.dao.*;
 import it.unisa.model.bean.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpSession;
 
 public class LoginControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(LoginControl.class.getName());
+	
        private static UserDAO model = new UserDAO();
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,15 +44,15 @@ public class LoginControl extends HttpServlet {
 					}
 				}
 				else {
-						String ALERT = "Email o Password errata";
-						request.setAttribute("Alert", ALERT);
+						String alert = "Email o Password errata";
+						request.setAttribute("Alert", alert);
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/LoginView.jsp");
 						dispatcher.forward(request, response);
 						
 				}
 				
 		}catch(Throwable e) {
-			System.out.println("Errore LoignControl: "+e.getMessage());
+			logger.log(null,() -> "Errore Login Control: " + e.getMessage());
 			e.printStackTrace();
 		}
 		
