@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.sql.Date;
 
 import javax.naming.Context;
@@ -15,7 +17,7 @@ import javax.sql.DataSource;
 import it.unisa.model.bean.OrdineBean;
 
 public class OrdiniDAO {
-	private static final String TABLE_NAME_Ordine = "ordine";
+	private static final String TABLE_NAME_ORDINE = "ordine";
 	
 	private static DataSource ds;
 	
@@ -26,7 +28,8 @@ public class OrdiniDAO {
 			
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 		}catch(NamingException e) {
-			System.out.println("Errore OrdiniDAO: "+ e.getMessage());
+			Logger logger = Logger.getLogger(OrdiniDAO.class.getName());
+			logger.log(Level.SEVERE, () -> "Errore Carrello Control: " + e.getMessage());
 		}
 	}
 
@@ -34,7 +37,7 @@ public class OrdiniDAO {
 		Connection con = null;
 		PreparedStatement prSOrdine = null;
 		
-		String insertOrdineSQL = "insert into "+TABLE_NAME_Ordine+" (Stato,Data,ID_Utente)"
+		String insertOrdineSQL = "insert into "+TABLE_NAME_ORDINE+" (Stato,Data,ID_Utente)"
 								+" values(?,?,?)";
 		
 		try {
@@ -64,7 +67,7 @@ public class OrdiniDAO {
 		PreparedStatement prSOrdine = null;
 		ResultSet result;
 		OrdineBean ordine = new OrdineBean();
-		String selectSQL = "select * from "+TABLE_NAME_Ordine+" where ID_Utente = ?";
+		String selectSQL = "select * from "+TABLE_NAME_ORDINE+" where ID_Utente = ?";
 		
 		try {
 			con = ds.getConnection();
@@ -96,8 +99,8 @@ public class OrdiniDAO {
 		Connection con = null;
 		PreparedStatement prSOrdine = null;
 		ResultSet result;
-		ArrayList<OrdineBean> ordini = new ArrayList<OrdineBean>();
-		String selectSQL = "select * from "+TABLE_NAME_Ordine+" where ID_Utente = ?";
+		ArrayList<OrdineBean> ordini = new ArrayList<>();
+		String selectSQL = "select * from "+TABLE_NAME_ORDINE+" where ID_Utente = ?";
 		
 		try {
 			con = ds.getConnection();
@@ -129,8 +132,8 @@ public class OrdiniDAO {
 		Connection con = null;
 		PreparedStatement prSOrdine = null;
 		ResultSet result;
-		ArrayList<OrdineBean> ordini = new ArrayList<OrdineBean>();
-		String selectSQL = "select * from "+TABLE_NAME_Ordine+" where Data Between ? and ?";
+		ArrayList<OrdineBean> ordini = new ArrayList<>();
+		String selectSQL = "select * from "+TABLE_NAME_ORDINE+" where Data Between ? and ?";
 		
 		try {
 			con = ds.getConnection();

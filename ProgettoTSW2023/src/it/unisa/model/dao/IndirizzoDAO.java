@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -12,7 +15,7 @@ import it.unisa.model.bean.IndirizzoBean;
 import it.unisa.model.bean.UserBean;
 
 public class IndirizzoDAO {
-	private static final String TABLE_NAME_Indirizzo = "Indirizzo";
+	private static final String TABLE_NAME_INDIRIZZO = "Indirizzo";
 	private static DataSource ds;
 	static {
 		try {
@@ -22,7 +25,8 @@ public class IndirizzoDAO {
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 			
 		}catch(NamingException e) {
-			System.out.println("Errore: "+e.getMessage());
+			Logger logger = Logger.getLogger(IndirizzoDAO.class.getName());
+			logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 		}
 	}
 	
@@ -30,7 +34,7 @@ public class IndirizzoDAO {
 		Connection con = null;
 		PreparedStatement prSIndirizzo = null;
 		
-		String insertIndirizzoSQL = "insert into "+ TABLE_NAME_Indirizzo+" (ID,Citta,Via,Numero_Civico,Piano,Interno,Scala)"+
+		String insertIndirizzoSQL = "insert into "+ TABLE_NAME_INDIRIZZO+" (ID,Citta,Via,Numero_Civico,Piano,Interno,Scala)"+
 									" values(?,?,?,?,?,?,?)";
 		try {
 			con = ds.getConnection();
@@ -63,7 +67,7 @@ public class IndirizzoDAO {
 		ResultSet result;
         Connection con = null;
         PreparedStatement prS = null;
-        String selectQuery = "Select * from "+TABLE_NAME_Indirizzo+" WHERE ID = ?";
+        String selectQuery = "Select * from "+TABLE_NAME_INDIRIZZO+" WHERE ID = ?";
         IndirizzoBean indirizzo = new IndirizzoBean();
         try {
         	con = ds.getConnection();

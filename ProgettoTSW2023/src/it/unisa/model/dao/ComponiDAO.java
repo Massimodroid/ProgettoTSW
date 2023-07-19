@@ -33,7 +33,8 @@ public class ComponiDAO {
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 		}catch(NamingException e) {
 			Logger logger = Logger.getLogger(ComponiDAO.class.getName());
-			logger.log(Level.SEVERE, "Errore ComponiDAO: " + e.getMessage());
+			logger.log(Level.SEVERE, () -> "Errore ComponiDAO: " + e.getMessage());
+
 
 		}
 	}
