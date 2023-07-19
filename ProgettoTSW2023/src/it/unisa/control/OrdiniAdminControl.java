@@ -3,6 +3,7 @@ package it.unisa.control;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
@@ -21,12 +22,14 @@ import it.unisa.model.dao.ComponiDAO;
 
 public class OrdiniAdminControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(OrdiniAdminControl.class.getName());
+	
 	private static final OrdiniDAO modelOrdini = new OrdiniDAO();
 	private static final UserDAO modelUser = new UserDAO();
 	private static final ComponiDAO model = new ComponiDAO();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<OrdineBean> ordini = new ArrayList<OrdineBean>();
+		ArrayList<OrdineBean> ordini = new ArrayList<>();
 		String op = request.getParameter("op");
 		
 		if(op.equalsIgnoreCase("ricercaD")) {
@@ -39,14 +42,14 @@ public class OrdiniAdminControl extends HttpServlet {
 					request.setAttribute("ordini", ordini);
 				}
 			} catch (SQLException e) {
-				System.out.println("Errore OrdiniAdmin:"+e.getMessage());
+				logger.log(null,() -> "Errore Ordini Admin Control: " + e.getMessage());
 				e.printStackTrace();
 			}
 		}
 		if(op.equalsIgnoreCase("ricercaN")){
 			String nome = request.getParameter("nome");
 			String cognome = request.getParameter("cognome");
-			ArrayList<UserBean> utenti = new ArrayList<UserBean>();
+			ArrayList<UserBean> utenti = new ArrayList<>();
 			try {
 				utenti=modelUser.doRetrieveUtenteForName(nome, cognome);
 				request.setAttribute("utenti", utenti);
@@ -55,13 +58,13 @@ public class OrdiniAdminControl extends HttpServlet {
 				return;
 				
 			} catch (SQLException e) {
-				System.out.println("Errore Ordini Admin:"+e.getMessage());
+				logger.log(null,() -> "Errore Ordini Admin Control: " + e.getMessage());
 				e.printStackTrace();
 			}
 		}
 		if(op.equalsIgnoreCase("dettagli")) {
 			int id=Integer.parseInt(request.getParameter("id"));
-			ArrayList<ComponiBean> bean = new ArrayList<ComponiBean>();
+			ArrayList<ComponiBean> bean = new ArrayList<>();
 			try {
 				bean = model.doRetrieveByKey(id);
 			} catch (SQLException e) {
