@@ -80,7 +80,7 @@ public class AdminControl extends HttpServlet {
 							return;
 							
 						} catch (SQLException e) {
-							e.printStackTrace();
+							logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
 						}
 					}else if(op.equalsIgnoreCase("insert")) {
 						stato=false;

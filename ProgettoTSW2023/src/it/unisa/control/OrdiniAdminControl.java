@@ -67,7 +67,7 @@ public class OrdiniAdminControl extends HttpServlet {
 			try {
 				bean = model.doRetrieveByKey(id);
 			} catch (SQLException e) {
-				e.printStackTrace();
+				logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
 			}
 			request.setAttribute("componi", bean);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/DettagliAdmin.jsp");
