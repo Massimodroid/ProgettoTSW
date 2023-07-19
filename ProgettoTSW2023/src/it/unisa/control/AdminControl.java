@@ -36,7 +36,8 @@ public class AdminControl extends HttpServlet {
 					prodotti = modelProd.doRetrieveAll();
 				} catch (SQLException e) {
 					
-					logger.log(Level.SEVERE, ERRORE_ADMIN + e.getMessage(), e);
+					logger.log(Level.SEVERE, () -> ERRORE_ADMIN + e.getMessage());
+
 				}
 					request.setAttribute(PRODOTTI, prodotti);
 
