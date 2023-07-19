@@ -9,7 +9,7 @@ public class CartaBean {
 	private String circuito;
 	
 	public CartaBean() {
-		
+		//Costruttore vuoto
 	}
 
 	public String getCircuito() {

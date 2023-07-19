@@ -1,14 +1,21 @@
 package it.unisa.model;
+
 import it.unisa.model.dao.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 public class Carrello {
+	
+	Logger logger = Logger.getLogger(Carrello.class.getName());
 	private ArrayList<ProdottoCarrello> carrello;
 	
 	public Carrello() {
-		this.carrello = new ArrayList<ProdottoCarrello>();
+		this.carrello = new ArrayList<>();
 	}
 	
 	public List<ProdottoCarrello> getAllItem(){
@@ -34,7 +41,7 @@ public class Carrello {
 				ProdottoCarrello newItem = new ProdottoCarrello(model.doRetrieveByKey(idProdotto));
 				carrello.add(newItem);
 			}catch(SQLException e){
-				System.out.println("Errore Carrello :"+e.getMessage());
+				logger.log(Level.SEVERE, () -> "Errore Carrello: " + e.getMessage());
 			}
 		}
 	}
@@ -43,7 +50,7 @@ public class Carrello {
 		ProdottoCarrello item;
 		ProdottoDAO model = new ProdottoDAO();
 		for(int i=0;i<carrello.size();i++) {
-			item = (ProdottoCarrello) carrello.get(i);
+			item = carrello.get(i);
 			if(item.getProdottoID()==id) {
 				if(n<=0) {
 					carrello.remove(i);
@@ -58,7 +65,7 @@ public class Carrello {
 			ProdottoCarrello newItem = new ProdottoCarrello(model.doRetrieveByKey(id));
 			carrello.add(newItem);
 		}catch(SQLException e) {
-			System.out.println("Errore Carrello: "+e.getMessage());
+			logger.log(Level.SEVERE, () -> "Errore Carrello: " + e.getMessage());
 		}
 		
 	}

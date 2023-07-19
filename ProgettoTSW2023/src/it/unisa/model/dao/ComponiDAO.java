@@ -5,6 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import it.unisa.model.bean.ProdottoBean;
 
 import javax.naming.Context;
@@ -18,7 +21,9 @@ import it.unisa.model.bean.ComponiBean;
 import it.unisa.model.bean.OrdineBean;
 
 public class ComponiDAO {
-	private static final String TABLE_NAME_Comporre = "comporre";
+	
+	
+	private static final String TABLE_NAME_COMPORRE = "comporre";
 	private static DataSource ds;
 	static {
 		try {
@@ -27,18 +32,21 @@ public class ComponiDAO {
 			
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 		}catch(NamingException e) {
-			System.out.println("Errore ComponiDAO: "+ e.getMessage());
+			Logger logger = Logger.getLogger(ComponiDAO.class.getName());
+			logger.log(Level.SEVERE, "Errore ComponiDAO: " + e.getMessage());
+
 		}
 	}
+	
 	public void doSave(OrdineBean ordine,Carrello carrello) throws SQLException {
 		Connection con = null;
 		PreparedStatement prSComponi = null;
-		List<ProdottoCarrello> prodCart = new ArrayList<ProdottoCarrello>();
+		List<ProdottoCarrello> prodCart = new ArrayList<>();
 		
 		
 		
 		
-		String insertComporreSQL = "insert into "+TABLE_NAME_Comporre+" (ID_Articolo,ID_Ordine,IVA,Descrizione,Image,Tipologia,Prezzo_Articolo,Quantita_Selezionata)"
+		String insertComporreSQL = "insert into "+TABLE_NAME_COMPORRE+" (ID_Articolo,ID_Ordine,IVA,Descrizione,Image,Tipologia,Prezzo_Articolo,Quantita_Selezionata)"
 								  +" values(?,?,?,?,?,?,?,?)";
 		try {
 			con = ds.getConnection();
@@ -77,8 +85,8 @@ public class ComponiDAO {
 		Connection con = null;
 		PreparedStatement prSComponi = null;
 		ResultSet result;
-		ArrayList<ComponiBean> elemComponi = new ArrayList<ComponiBean>();
-		String selectSQL ="select * from "+TABLE_NAME_Comporre+" where ID_Ordine = ?";
+		ArrayList<ComponiBean> elemComponi = new ArrayList<>();
+		String selectSQL ="select * from "+TABLE_NAME_COMPORRE+" where ID_Ordine = ?";
 		
 		try {
 			con = ds.getConnection();

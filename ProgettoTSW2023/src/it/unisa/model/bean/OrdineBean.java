@@ -9,6 +9,7 @@ public class OrdineBean {
 	private int idUtente;
 	
 	public OrdineBean() {
+		//Costruttore vuoto
 		
 	}
 	

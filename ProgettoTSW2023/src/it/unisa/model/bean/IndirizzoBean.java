@@ -10,7 +10,7 @@ public class IndirizzoBean {
 	private String scala;
 	
 	public IndirizzoBean() {
-		// TODO Auto-generated constructor stub
+		// Costruttore vuoto
 	}
 	
 	

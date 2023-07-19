@@ -24,6 +24,7 @@ public class RegistrazioneControl extends HttpServlet {
   
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Metodo vuoto - Nessuna implementazione richiesta per questa servlet
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

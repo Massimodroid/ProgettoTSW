@@ -3,12 +3,13 @@ package it.unisa.model.bean;
 import java.sql.Date;
 
 public class ValutazioneBean {
-	private int idUtente,idArticolo;
+	private int idUtente;
+	private int idArticolo;
 	private String commento;
 	private Date data;
 	
 	public ValutazioneBean() {
-		
+		//Costruttore vuoto
 	}
 	
 	public String getCommento() {
