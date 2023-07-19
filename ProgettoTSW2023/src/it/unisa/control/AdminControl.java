@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.unisa.model.dao.*;
 import it.unisa.model.bean.*;
-import java.util.logging.Logger;
+
 
 public class AdminControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String PRODOTTI = "prodotti";
 	private static final ProdottoDAO modelProd = new ProdottoDAO();
 	private static final ComponiDAO modelComponi = new ComponiDAO();
-	Logger logger
-    = Logger.getLogger(
-        AdminControl.class.getName());
+	Logger logger = Logger.getLogger(AdminControl.class.getName());
+	
 	//credenziali per accedere alla sezione admin: email= mobileworld.info@gmail.com password=Tsw12345@
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,10 +33,11 @@ public class AdminControl extends HttpServlet {
 					prodotti = modelProd.doRetrieveAll();
 				} catch (SQLException e) {
 					
-					logger.log(null, "Errore Admin Control:"+e.getMessage());
+					logger.log(null, "Errore Admin Control: %s", e.getMessage());
+
 					e.printStackTrace();
 				}
-					request.setAttribute("prodotti", prodotti);
+					request.setAttribute(PRODOTTI, prodotti);
 
 				String op= (String)request.getParameter("op");
 				if(op!=null) {
@@ -49,7 +50,8 @@ public class AdminControl extends HttpServlet {
 							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/ModificaAdmin.jsp");
 							dispatcher.forward(request, response);
 						} catch (SQLException e) {
-							logger.log(null,"Errore Admin Control: "+e.getMessage());
+							logger.log(null, "Errore Admin Control: %s", e.getMessage());
+
 							e.printStackTrace();
 						}
 						
@@ -63,7 +65,8 @@ public class AdminControl extends HttpServlet {
 								request.setAttribute("componi", componi);
 							}
 						} catch (SQLException e) {
-							logger.log(null,"Errore Admin Control: "+e.getMessage());
+							logger.log(null, "Errore Admin Control: %s", e.getMessage());
+
 							e.printStackTrace();
 						}
 					}
@@ -71,9 +74,9 @@ public class AdminControl extends HttpServlet {
 						int id = Integer.parseInt(request.getParameter("id"));
 						try {
 							modelProd.doDelete(id);
-							request.removeAttribute("prodotti");
+							request.removeAttribute(PRODOTTI);
 							prodotti = modelProd.doRetrieveAll();
-							request.setAttribute("prodotti", prodotti);
+							request.setAttribute(PRODOTTI, prodotti);
 							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/Admin.jsp");
 							dispatcher.forward(request, response);
 							return;

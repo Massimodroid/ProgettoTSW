@@ -16,15 +16,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.logging.Logger;
 
 
 
 
 public class CarrelloControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String CARRELLO = "carrello";
+	Logger logger = Logger.getLogger(AdminControl.class.getName());
+	
     ProdottoDAO model = new ProdottoDAO();
        OrdiniDAO modelOrdini = new OrdiniDAO();
        ComponiDAO modelComponi = new ComponiDAO();
+       
     
     public CarrelloControl() {
         super();
@@ -33,13 +38,13 @@ public class CarrelloControl extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Carrello carrello = (Carrello)request.getSession().getAttribute("carrello");
+		Carrello carrello = (Carrello)request.getSession().getAttribute(CARRELLO);
 		UserBean user = (UserBean)request.getSession().getAttribute("Utente");
 		OrdineBean ordine = new OrdineBean();
 		boolean state=false;
 		if(carrello == null) {
 			carrello = new Carrello();
-			request.getSession().setAttribute("carrello", carrello);
+			request.getSession().setAttribute(CARRELLO, carrello);
 		}
 		String op = request.getParameter("op");
 		if(op != null) {
@@ -67,7 +72,7 @@ public class CarrelloControl extends HttpServlet {
 						ordine.setIdUtente(user.getIdUtente());
 						modelOrdini.doSave(ordine);
 						modelComponi.doSave(modelOrdini.doRetrieveByKey(user.getIdUtente()), carrello);
-						List<ProdottoCarrello> list= new ArrayList<ProdottoCarrello>();
+						List<ProdottoCarrello> list= new ArrayList<>();
 						list = carrello.getAllItem();
 						for(ProdottoCarrello prdC:list) {
 							int idP= prdC.getProdottoID();
@@ -81,7 +86,7 @@ public class CarrelloControl extends HttpServlet {
 					
 					
 				} catch (SQLException e) {
-					System.out.println("Errore Carrello control:"+ e.getMessage());
+					logger.log(null,"Errore Carrello Control: "+e.getMessage());
 					
 				}
 				carrello.deleteAll();
@@ -91,8 +96,8 @@ public class CarrelloControl extends HttpServlet {
 			
 		}
 		
-		request.getSession().setAttribute("carrello", carrello);
-		request.setAttribute("carrello", carrello);
+		request.getSession().setAttribute(CARRELLO, carrello);
+		request.setAttribute(CARRELLO, carrello);
 		if(state == false) {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CarrelloView.jsp");
 		dispatcher.forward(request, response);
