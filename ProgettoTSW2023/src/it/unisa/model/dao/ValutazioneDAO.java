@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -25,7 +27,8 @@ public class ValutazioneDAO {
 			
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 		}catch(NamingException e) {
-			System.out.println("Errore ComponiDAO: "+ e.getMessage());
+			Logger logger = Logger.getLogger(PagamentoDAO.class.getName());
+			logger.log(Level.SEVERE, () -> "Errore ValutazioneDAO: " + e.getMessage());
 		}
 	}
 	
@@ -64,7 +67,7 @@ public class ValutazioneDAO {
 		Connection con = null;
 		PreparedStatement prS = null;
 		ResultSet result;
-		ArrayList<ValutazioneBean> all = new ArrayList<ValutazioneBean>();
+		ArrayList<ValutazioneBean> all = new ArrayList<>();
 		
 		
 		String select = "select * from "+TABLE +" WHERE ID_Articolo = ?";
@@ -102,7 +105,7 @@ public class ValutazioneDAO {
         Connection con = null;
         PreparedStatement prS = null;
         String select = "select Nome,Cognome,Data,Commento from Utente,Valutazione where ID_Articolo = ? and ID_Utente = ID ";
-        ArrayList<CommentoBean> commenti= new ArrayList<CommentoBean>();
+        ArrayList<CommentoBean> commenti= new ArrayList<>();
         try {
         	con = ds.getConnection();
         	prS = con.prepareStatement(select);

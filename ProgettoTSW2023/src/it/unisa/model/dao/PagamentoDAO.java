@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -14,7 +16,7 @@ import it.unisa.model.bean.CartaBean;
 import it.unisa.model.bean.UserBean;
 
 public class PagamentoDAO {
-	private static final String TABLE_NAME_Pagamento = "Metodo_Pagamento";
+	private static final String TABLE_NAME_PAGAMENTO = "Metodo_Pagamento";
 	private static DataSource ds;
 	
 	static {
@@ -25,12 +27,13 @@ public class PagamentoDAO {
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 			
 		}catch(NamingException e) {
-			System.out.println("Errore: "+e.getMessage());
+			Logger logger = Logger.getLogger(PagamentoDAO.class.getName());
+			logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 		}
 	}
 	
 	public void doSave(CartaBean carta, UserBean user) throws SQLException {
-	    String insertCarta = "INSERT INTO " + TABLE_NAME_Pagamento + " (Codice_Segreto, Numero_Carta, Data, Circuito) VALUES (?, ?, ?, ?)";
+	    String insertCarta = "INSERT INTO " + TABLE_NAME_PAGAMENTO + " (Codice_Segreto, Numero_Carta, Data, Circuito) VALUES (?, ?, ?, ?)";
 	    String updateSQL = "UPDATE utente SET Numero_Carta = ? WHERE ID = ?";
 	    
 	    try (Connection con = ds.getConnection();
@@ -50,8 +53,8 @@ public class PagamentoDAO {
 	        user.setNumeroCarta(carta.getNumeroCarta());
 	        
 	    } catch (SQLException e) {
-	        
-	        throw e;
+	    	Logger logger = Logger.getLogger(PagamentoDAO.class.getName());
+	    	logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 	    }
 	}
 
@@ -59,7 +62,7 @@ public class PagamentoDAO {
 		ResultSet result;
         Connection con = null;
         PreparedStatement prS = null;
-        String selectQuery = "Select * from "+TABLE_NAME_Pagamento+" WHERE Numero_Carta = ?";
+        String selectQuery = "Select * from "+TABLE_NAME_PAGAMENTO+" WHERE Numero_Carta = ?";
         CartaBean carta = new CartaBean();
         try {
         	con = ds.getConnection();
