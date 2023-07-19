@@ -1,15 +1,12 @@
 package it.unisa.model.dao;
+
 import it.unisa.model.bean.*;
-
-
-
-
 import java.io.IOException;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.naming.Context;
@@ -30,7 +27,8 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 			
 		}catch(NamingException e) {
-			System.out.println("Errore: "+e.getMessage());
+			Logger logger = Logger.getLogger(PagamentoDAO.class.getName());
+			logger.log(Level.SEVERE, () -> "context: " + e.getMessage());
 		}
 	}
 	
@@ -178,10 +176,10 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 		Connection con = null;
 		PreparedStatement prS = null;
 		
-		String UPDATE = "UPDATE articolo SET Quantita_Disponibile = Quantita_Disponibile- ? WHERE ID = ? ";
+		String update = "UPDATE articolo SET Quantita_Disponibile = Quantita_Disponibile- ? WHERE ID = ? ";
 		try {
 			con = ds.getConnection();
-			prS = con.prepareStatement(UPDATE);
+			prS = con.prepareStatement(update);
 			prS.setInt(1, quanti);
 			prS.setInt(2, id);
 			
@@ -222,7 +220,7 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 		Connection con = null;
 		PreparedStatement prS = null;
 		ResultSet result = null;
-		ArrayList<ProdottoBean> prod = new ArrayList<ProdottoBean>();
+		ArrayList<ProdottoBean> prod = new ArrayList<>();
 		String search = "Select * from articolo where Tipologia = ?";
 		
 		try {

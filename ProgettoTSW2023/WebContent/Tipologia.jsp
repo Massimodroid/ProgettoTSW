@@ -33,7 +33,7 @@
 		<fieldset>
 		<legend></legend>
 		<p><%=bean.getNome()%></p>
-		<img src="<%=bean.getPath()%>" style="display: inline-block;" border="none"; width="256px" height="256px" alt="Immagine Prodotto">
+		<img src="<%=bean.getPath()%>" style="display: inline-block;" width="256px" height="256px" alt="Immagine Prodotto">
 		€<%=bean.getPrezzo()%>
 		<%if(bean.getQuantita()!=0){ %>
 			<div class="iconInfo"><a href="./dettagli?tipologia=<%=bean.getTipologia()%>&id=<%=bean.getIdProdotto() %>"><button><img src="img/icona-info.png" class="image" alt="Immagine Icona"></button></a></div>

@@ -2,6 +2,8 @@ package it.unisa.model.dao;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import it.unisa.model.bean.*;
 import java.sql.PreparedStatement;
@@ -11,7 +13,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 public class UserDAO {
-	private static final String TABLE_NAME_Utente = "Utente";
+	private static final String TABLE_NAME_UTENTE = "Utente";
 	private static DataSource ds;
 	
 	static {
@@ -22,7 +24,8 @@ public class UserDAO {
 			ds = (DataSource) env.lookup("jdbc/smartphone");
 			
 		}catch(NamingException e) {
-			System.out.println("Errore UserDAO: "+e.getMessage());
+			Logger logger = Logger.getLogger(PagamentoDAO.class.getName());
+			logger.log(Level.SEVERE, () -> "Errore UserDAO: " + e.getMessage());
 		}
 	}
 	
@@ -30,7 +33,7 @@ public class UserDAO {
 		Connection con = null;
 		PreparedStatement prSUtente = null;
 		
-		String insertUtenteSQL = "insert into "+ TABLE_NAME_Utente+" (Nome,Cognome,Email,Password,Ruolo)"+
+		String insertUtenteSQL = "insert into "+ TABLE_NAME_UTENTE+" (Nome,Cognome,Email,Password,Ruolo)"+
 								 " values(?,?,?,?,?)";
 		try {
 			con = ds.getConnection();
@@ -61,7 +64,7 @@ public class UserDAO {
 		ResultSet result;
         Connection con = null;
         PreparedStatement prS = null;
-        String selectQuery = "Select * from "+TABLE_NAME_Utente+" WHERE email = ? and password = ?";
+        String selectQuery = "Select * from "+TABLE_NAME_UTENTE+" WHERE email = ? and password = ?";
         UserBean user = new UserBean();
         try {
         	con = ds.getConnection();
@@ -100,8 +103,8 @@ public class UserDAO {
 		ResultSet result;
         Connection con = null;
         PreparedStatement prS = null;
-        String selectQuery = "Select * from "+TABLE_NAME_Utente+" WHERE Nome = ? and Cognome = ?";
-        ArrayList<UserBean> utenti = new  ArrayList<UserBean>();
+        String selectQuery = "Select * from "+TABLE_NAME_UTENTE+" WHERE Nome = ? and Cognome = ?";
+        ArrayList<UserBean> utenti = new  ArrayList<>();
         
         try {
         	con = ds.getConnection();
@@ -139,7 +142,7 @@ public class UserDAO {
 		ResultSet result;
         Connection con = null;
         PreparedStatement prS = null;
-        String selectQuery = "Select * from "+TABLE_NAME_Utente+" WHERE Email = ?";
+        String selectQuery = "Select * from "+TABLE_NAME_UTENTE+" WHERE Email = ?";
         UserBean user = new UserBean();
         try {
         	con = ds.getConnection();
