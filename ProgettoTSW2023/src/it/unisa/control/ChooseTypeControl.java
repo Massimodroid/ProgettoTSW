@@ -9,15 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
+import java.util.logging.Logger;
+
 import it.unisa.model.dao.ProdottoDAO;
 import it.unisa.model.bean.ProdottoBean;
 
 public class ChooseTypeControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(ChooseTypeControl.class.getName());
+	
        private static final ProdottoDAO model = new ProdottoDAO();
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<ProdottoBean> prodotti = new ArrayList<ProdottoBean>();
+		ArrayList<ProdottoBean> prodotti = new ArrayList<>();
 		String tipologia = request.getParameter("tipologia");
 		String like = request.getParameter("like");
 		String search = request.getParameter("search");
@@ -37,7 +41,7 @@ public class ChooseTypeControl extends HttpServlet {
 				return;
 			}
 		} catch (SQLException e) {
-			System.out.println("Errore in ChooseTypeContorl :"+e.getMessage());
+			logger.log(null, () -> "Errore in ChhoseTypeControl: " + e.getMessage());
 			e.printStackTrace();
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");
@@ -46,7 +50,8 @@ public class ChooseTypeControl extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// Non sono richieste operazioni specifiche per le richieste POST in questo servlet.
+	    // Il servlet gestisce solo le richieste GET.
 	}
 
 }

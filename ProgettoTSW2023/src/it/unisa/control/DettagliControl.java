@@ -29,7 +29,7 @@ public class DettagliControl extends HttpServlet {
 			throws ServletException, IOException {
 
 		int id = Integer.parseInt(request.getParameter("id"));
-		ArrayList<ProdottoBean> prodotti = new ArrayList<ProdottoBean>();
+		ArrayList<ProdottoBean> prodotti = new ArrayList<>();
 		String tipologia = request.getParameter("tipologia");
 		String like = null;
 		try {
@@ -45,7 +45,7 @@ public class DettagliControl extends HttpServlet {
 						prodotti.remove(i);
 					}
 				}
-				ArrayList<CommentoBean> commenti= new ArrayList<CommentoBean>();
+				ArrayList<CommentoBean> commenti= new ArrayList<>();
 				commenti = modelVal.doRetrieveVal(id);
 				request.setAttribute("prodotto", model.doRetrieveByKey(id));
 			request.setAttribute("prodotti", prodotti);
@@ -60,10 +60,9 @@ public class DettagliControl extends HttpServlet {
 			request.getSession().setAttribute("carrello", carrello);
 		}
 		String op = request.getParameter("op");
-		if(op!=null) {
-		if (op.equalsIgnoreCase("aggC")) {
+		if(op!=null && op.equalsIgnoreCase("aggC")) {
 			carrello.addItem(id);
-		}
+		
 		}
 		
 

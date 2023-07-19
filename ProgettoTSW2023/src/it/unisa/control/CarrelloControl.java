@@ -24,7 +24,8 @@ import java.util.logging.Logger;
 public class CarrelloControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String CARRELLO = "carrello";
-	Logger logger = Logger.getLogger(AdminControl.class.getName());
+	
+	Logger logger = Logger.getLogger(CarrelloControl.class.getName());
 	
     ProdottoDAO model = new ProdottoDAO();
        OrdiniDAO modelOrdini = new OrdiniDAO();
@@ -86,7 +87,7 @@ public class CarrelloControl extends HttpServlet {
 					
 					
 				} catch (SQLException e) {
-					logger.log(null,"Errore Carrello Control: "+e.getMessage());
+					logger.log(null,() -> "Errore Carrello Control" + e.getMessage());
 					
 				}
 				carrello.deleteAll();

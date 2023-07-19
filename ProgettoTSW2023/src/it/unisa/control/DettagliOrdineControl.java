@@ -23,7 +23,7 @@ public class DettagliOrdineControl extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		UserBean user = (UserBean) request.getSession().getAttribute("Utente");
-		ArrayList<ComponiBean> bean = new ArrayList<ComponiBean>();
+		ArrayList<ComponiBean> bean = new ArrayList<>();
 		try {
 			if(user.isValid()) {
 				bean = model.doRetrieveByKey(id);
