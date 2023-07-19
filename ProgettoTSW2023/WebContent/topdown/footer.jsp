@@ -30,15 +30,15 @@
 	
 	<div class="socialdistance">
 	    <div class="social">
-		<a href="https://twitter.com/" target="_blank"><img src="img/twitter.png" class="image"  alt="twitter"></a>
+		<a href="https://twitter.com/" target="_blank" rel="noopener"><img src="img/twitter.png" class="image"  alt="twitter"></a>
 		</div>
 		
 		<div class="social">
-		<a href="https://it-it.facebook.com/" target="_blank"><img src="img/facebook.png" class="image"  alt="facebook"></a>
+		<a href="https://it-it.facebook.com/" target="_blank" rel="noopener"><img src="img/facebook.png" class="image"  alt="facebook"></a>
 		</div>
 		
 		<div class="social">
-		<a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.png" class="image"  alt="instagram"></a>
+		<a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="img/instagram.png" class="image"  alt="instagram"></a>
 		</div>
 	</div>
 	
