@@ -32,7 +32,10 @@
 	<div class="slideshow-container">
 		<div class="sliderPreferences">
 			<div class="mySlides fade">
-				<img src="./img-banner/banner1.jpg" alt= "banner iphone" height="400" width="100%">	
+				
+				<a href="pagina_destinazione.html">
+  <img src="./img-banner/banner1.jpg" alt="banner iphone" height="400" width="100%">
+</a>	
 			</div>
 					
 			<div class="mySlides fade">

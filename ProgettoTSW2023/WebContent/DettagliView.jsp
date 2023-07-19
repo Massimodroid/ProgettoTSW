@@ -97,16 +97,17 @@
                   <% } else if (prodotto.getQuantita() >= 1) { %>
 
                     <h3>Disponibilità:</h3><span><%= prodotto.getQuantita() %></span>
+                    <div class="purchase-info">
+
+                  <button type="button" class="btn" onclick="addTocart(<%= prodotto.getIdProdotto() %>), increment()"> Aggiungi al carrello <i class="fas fa-shopping-cart"></i></button>
+
+                </div>
 
                   <% } %>
 
                 </div>
 
-                <div class="purchase-info">
-
-                  <button type="button" class="btn" onclick="addTocart(<%= prodotto.getIdProdotto() %>), increment()"> Aggiungi al carrello <i class="fas fa-shopping-cart"></i></button>
-
-                </div>
+                
 
               </div>
 

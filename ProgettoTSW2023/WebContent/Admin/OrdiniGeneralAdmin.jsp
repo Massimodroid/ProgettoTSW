@@ -27,7 +27,7 @@
 		<div class="UtenteAdmin">
 			<h3 style="text-align: center;"><%=user.getNome()%> <%=user.getCognome() %><br>
 			ID: #<%=user.getIdUtente() %></h3>
-			<img src="./img/userComm.png" alt = "Immagine admin" style="display: inline-block;" width="200px" height="200px">		
+			<img src="./img/UserBlank.png" alt = "Immagine admin" style="display: inline-block;" width="200px" height="200px">		
 			<div></div>
 			<div class="iconInfo">
 				<a href="./ordiniAdmin?op=view&id=<%=user.getIdUtente()%>">
