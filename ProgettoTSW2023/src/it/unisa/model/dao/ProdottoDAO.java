@@ -1,15 +1,15 @@
 package it.unisa.model.dao;
 import it.unisa.model.bean.*;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+
+
+
 import java.io.IOException;
-import java.io.InputStream;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Base64;
-import java.util.Collection;
+import java.util.List;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.naming.Context;
@@ -140,13 +140,13 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 		Connection con = null;
 		PreparedStatement prS = null;
 		ResultSet result;
-		ArrayList<ProdottoBean> prodotti = new ArrayList<ProdottoBean>();
+		ArrayList<ProdottoBean> prodotti = new ArrayList<>();
 		
-		String SelectSQL = "Select * from " + TABLE_NAME;
+		String selectSql = "Select * from " + TABLE_NAME;
 
 		try {
 		con = ds.getConnection();
-		prS = con.prepareStatement(SelectSQL);
+		prS = con.prepareStatement(selectSql);
 		result = prS.executeQuery();
 		
 		while(result.next()) {
@@ -178,10 +178,10 @@ public class ProdottoDAO implements ProdottoModel<ProdottoBean>{
 		Connection con = null;
 		PreparedStatement prS = null;
 		
-		String update = "UPDATE articolo SET Quantita_Disponibile = Quantita_Disponibile- ? WHERE ID = ? ";
+		String UPDATE = "UPDATE articolo SET Quantita_Disponibile = Quantita_Disponibile- ? WHERE ID = ? ";
 		try {
 			con = ds.getConnection();
-			prS = con.prepareStatement(update);
+			prS = con.prepareStatement(UPDATE);
 			prS.setInt(1, quanti);
 			prS.setInt(2, id);
 			
@@ -353,7 +353,7 @@ public void refreshTipologia(int id,String tipologia) throws SQLException {
 
 }
 
-public void refreshIVA(int id,double IVA) throws SQLException {
+public void refreshIVA(int id,double iva) throws SQLException {
     Connection con = null;
     PreparedStatement prS = null;
 
@@ -363,7 +363,7 @@ public void refreshIVA(int id,double IVA) throws SQLException {
         con = ds.getConnection();
         prS = con.prepareStatement(updateSQL);
 
-        prS.setDouble(1, IVA);
+        prS.setDouble(1, iva);
         prS.setInt(2, id);
 
         prS.executeUpdate();
@@ -383,7 +383,7 @@ public void refreshIVA(int id,double IVA) throws SQLException {
 		Connection con = null;
 		PreparedStatement prS = null;
 		ResultSet result;
-		ArrayList<ProdottoBean>prodotti = new ArrayList<ProdottoBean>();
+		ArrayList<ProdottoBean>prodotti = new ArrayList<>();
 		String selectSQL = "select * from "+ TABLE_NAME+" where tipologia = ?";
 		String searchSQLCompletely = "Select * from "+TABLE_NAME+" where tipologia = ? and descrizione like ?";
 
@@ -440,7 +440,7 @@ public void refreshIVA(int id,double IVA) throws SQLException {
 		Connection con = null;
 		PreparedStatement prS = null;
 		ResultSet result;
-		ArrayList<ProdottoBean>prodotti = new ArrayList<ProdottoBean>();
+		ArrayList<ProdottoBean>prodotti = new ArrayList<>();
 		String searchSQL = "Select * from "+TABLE_NAME+" where descrizione like ? || Tipologia like ? ||Nome like ?";
 		try {
 			con = ds.getConnection();

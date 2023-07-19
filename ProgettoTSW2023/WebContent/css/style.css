@@ -483,12 +483,16 @@ body {
 .comsUtenti{
 	display: block;
 	width: 100%;
+	padding: 20px;
+	border: solid 3px black;
+	border-radius: 10px;
+	background-color: white;
 	
 }
 .imgComm{
-	display: inline-block;
 	width: 60px;
 	height: 60px;
+	float: left;
 	
 }
 
