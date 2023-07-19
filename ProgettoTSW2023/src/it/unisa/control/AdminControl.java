@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,10 +36,7 @@ public class AdminControl extends HttpServlet {
 					prodotti = modelProd.doRetrieveAll();
 				} catch (SQLException e) {
 					
-					logger.log(null,() -> ERRORE_ADMIN + e.getMessage());
-
-
-					e.printStackTrace();
+					logger.log(Level.SEVERE, ERRORE_ADMIN + e.getMessage(), e);
 				}
 					request.setAttribute(PRODOTTI, prodotti);
 
@@ -52,10 +50,9 @@ public class AdminControl extends HttpServlet {
 							request.setAttribute("bean", bean);
 							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/ModificaAdmin.jsp");
 							dispatcher.forward(request, response);
+							
 						} catch (SQLException e) {
-							logger.log(null, () -> ERRORE_ADMIN + e.getMessage());
-
-							e.printStackTrace();
+							logger.log(Level.SEVERE, ERRORE_ADMIN + e.getMessage(), e);
 						}
 						
 					}
@@ -68,9 +65,7 @@ public class AdminControl extends HttpServlet {
 								request.setAttribute("componi", componi);
 							}
 						} catch (SQLException e) {
-							logger.log(null, () -> ERRORE_ADMIN + e.getMessage());
-
-							e.printStackTrace();
+							logger.log(Level.SEVERE, ERRORE_ADMIN + e.getMessage(), e);
 						}
 					}
 					else if(op.equalsIgnoreCase("elimina")) {

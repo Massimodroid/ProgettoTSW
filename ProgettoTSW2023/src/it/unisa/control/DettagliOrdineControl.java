@@ -3,6 +3,8 @@ package it.unisa.control;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +20,8 @@ import it.unisa.model.dao.ComponiDAO;
 
 public class DettagliOrdineControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(DettagliOrdineControl.class.getName());
+	
 	private static final ComponiDAO model = new ComponiDAO();
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,7 +36,7 @@ public class DettagliOrdineControl extends HttpServlet {
 		
 		
 	} catch (SQLException e) {
-		e.printStackTrace();		
+		logger.log(Level.SEVERE, "context: " + e.getMessage(), e);		
 	}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/DettagliOrdineView.jsp");
 		dispatcher.forward(request, response);

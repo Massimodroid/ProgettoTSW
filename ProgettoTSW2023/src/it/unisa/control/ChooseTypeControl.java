@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import it.unisa.model.dao.ProdottoDAO;
@@ -41,8 +42,7 @@ public class ChooseTypeControl extends HttpServlet {
 				return;
 			}
 		} catch (SQLException e) {
-			logger.log(null, () -> "Errore in ChhoseTypeControl: " + e.getMessage());
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Errore in ChooseTypeControl: " + e.getMessage(), e);
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");
 		dispatcher.forward(request, response);

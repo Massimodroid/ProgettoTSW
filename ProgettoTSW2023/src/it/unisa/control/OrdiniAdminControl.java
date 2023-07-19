@@ -3,6 +3,7 @@ package it.unisa.control;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.Date;
 
@@ -42,8 +43,7 @@ public class OrdiniAdminControl extends HttpServlet {
 					request.setAttribute("ordini", ordini);
 				}
 			} catch (SQLException e) {
-				logger.log(null,() -> "Errore Ordini Admin Control: " + e.getMessage());
-				e.printStackTrace();
+				logger.log(Level.SEVERE, "Errore ordini Admin Control: " + e.getMessage(), e);
 			}
 		}
 		if(op.equalsIgnoreCase("ricercaN")){
@@ -58,8 +58,7 @@ public class OrdiniAdminControl extends HttpServlet {
 				return;
 				
 			} catch (SQLException e) {
-				logger.log(null,() -> "Errore Ordini Admin Control: " + e.getMessage());
-				e.printStackTrace();
+				logger.log(Level.SEVERE, "Errore ordini Admin Control: " + e.getMessage(), e);
 			}
 		}
 		if(op.equalsIgnoreCase("dettagli")) {
@@ -84,7 +83,7 @@ public class OrdiniAdminControl extends HttpServlet {
 				dispatcher.forward(request, response);
 				return;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
 			}
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/OrdiniAdmin.jsp");

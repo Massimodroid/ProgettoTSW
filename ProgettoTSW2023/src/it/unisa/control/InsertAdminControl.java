@@ -2,6 +2,7 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -35,8 +36,7 @@ public class InsertAdminControl extends HttpServlet {
 		try {
 			modelProd.doSave(bean);
 		} catch (SQLException e) {
-			logger.log(null,() -> "Errore Insert Admin Control: " + e.getMessage());
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Errore insert Admin Control: " + e.getMessage(), e);
 		}
 		
 		

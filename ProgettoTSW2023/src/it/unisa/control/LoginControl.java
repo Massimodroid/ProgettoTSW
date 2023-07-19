@@ -4,6 +4,7 @@ import it.unisa.model.dao.*;
 import it.unisa.model.bean.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -52,8 +53,7 @@ public class LoginControl extends HttpServlet {
 				}
 				
 		}catch(Throwable e) {
-			logger.log(null,() -> "Errore Login Control: " + e.getMessage());
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Errore LoginControl: " + e.getMessage(), e);
 		}
 		
 	

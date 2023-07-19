@@ -2,6 +2,7 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -53,8 +54,7 @@ public class ModificaAdminControl extends HttpServlet {
 			}
 		}
 		catch(SQLException e) {
-			logger.log(null,() -> "Errore Admin Control: " + e.getMessage());
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Errore modifica Admin Control: " + e.getMessage(), e);
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin");
 		dispatcher.forward(request, response);

@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +19,8 @@ import it.unisa.model.dao.ValutazioneDAO;
 
 public class CommentoControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(CommentoControl.class.getName());
+	
 	private static final ValutazioneDAO model = new ValutazioneDAO();
 	
 
@@ -37,7 +41,7 @@ public class CommentoControl extends HttpServlet {
 				model.doSave(val);
 			} catch (SQLException e) {
 				
-				e.printStackTrace();
+				logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
 			}
 			
 			

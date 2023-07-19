@@ -2,6 +2,9 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import it.unisa.model.dao.*;
 import it.unisa.model.bean.*;
 import javax.servlet.RequestDispatcher;
@@ -14,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RegistrazioneControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(RegistrazioneControl.class.getName());
+	
        private static final UserDAO modelUser = new UserDAO();
    
   
@@ -33,7 +38,7 @@ public class RegistrazioneControl extends HttpServlet {
 			request.getSession().setAttribute("Utente", user);
 		}catch(SQLException e) {
 			
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
 		}
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo");
 		dispatcher.forward(request, response);	

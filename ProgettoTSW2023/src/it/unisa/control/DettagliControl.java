@@ -3,6 +3,8 @@ package it.unisa.control;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import it.unisa.model.dao.ProdottoDAO;
 import it.unisa.model.dao.UserDAO;
@@ -21,6 +23,8 @@ import it.unisa.model.bean.ValutazioneBean;
 
 public class DettagliControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Logger logger = Logger.getLogger(DettagliControl.class.getName());
+	
 	ProdottoDAO model = new ProdottoDAO();
 	ValutazioneDAO modelVal = new ValutazioneDAO();
 	
@@ -52,7 +56,7 @@ public class DettagliControl extends HttpServlet {
 			request.setAttribute("commenti", commenti);
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
 		}
 		Carrello carrello = (Carrello) request.getSession().getAttribute("carrello");
 		if (carrello == null) {
