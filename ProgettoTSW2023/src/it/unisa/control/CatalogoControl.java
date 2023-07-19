@@ -2,6 +2,7 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import it.unisa.model.dao.ProdottoDAO;
@@ -31,7 +32,7 @@ public class CatalogoControl extends HttpServlet {
             request.removeAttribute("prodotti");
             request.setAttribute("prodotti", model.doRetrieveAll());
         } catch (SQLException e) {
-            logger.log(null, () -> "Errore: " + e.getMessage());
+        	logger.log(Level.SEVERE, "context: " + e.getMessage(), e);
         }
 
         String action = request.getParameter("action");
