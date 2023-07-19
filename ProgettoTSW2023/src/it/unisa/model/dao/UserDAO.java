@@ -103,7 +103,7 @@ public class UserDAO {
 		ResultSet result;
         Connection con = null;
         PreparedStatement prS = null;
-        String selectQuery = "Select * from "+TABLE_NAME_UTENTE+" WHERE Nome = ? and Cognome = ?";
+        String selectQuery = "Select * from "+TABLE_NAME_UTENTE+ " WHERE Nome = ? and Cognome = ?";
         ArrayList<UserBean> utenti = new  ArrayList<>();
         
         try {

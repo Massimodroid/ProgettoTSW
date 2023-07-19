@@ -133,7 +133,7 @@ public class OrdiniDAO {
 		PreparedStatement prSOrdine = null;
 		ResultSet result;
 		ArrayList<OrdineBean> ordini = new ArrayList<>();
-		String selectSQL = "select * from "+TABLE_NAME_ORDINE+" where Data Between ? and ?";
+		String selectSQL = "select * from "+TABLE_NAME_ORDINE+" WHERE Data >= ? AND Data <= ?";
 		
 		try {
 			con = ds.getConnection();

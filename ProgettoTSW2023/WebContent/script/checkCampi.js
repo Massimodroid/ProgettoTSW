@@ -57,7 +57,7 @@ function checkEmail(){
 
 function checkCods(){
 	let input = document.getElementsByName("codS")[0];
-	let check = /^[/d]+$/;
+	let check = /^[\d]+$/;
 	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#codS').css("border","1px solid red");
@@ -76,7 +76,7 @@ function checkCods(){
 
 function checkNumCarta(){
 	let input = document.getElementsByName("numCarta")[0];
-	let check = /^[/d]+$/;
+	let check = /^[\d]+$/;
 	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#numCarta').css("border","1px solid red");
@@ -153,7 +153,7 @@ function checkVia(){
 
 function checkNumero(){
 	let input = document.getElementsByName("NCivico")[0];
-	let check = /^[/d]+$/;
+	let check = /^[\d]+$/;
 	let esito;
 	if(!input.value.match(check) && !input.value==""){
 		$('#NCivico').css("border","1px solid red");
@@ -170,6 +170,7 @@ function checkNumero(){
 	return esito;
 }
 
+//controllo nuova registrazione utente
 function check(obj){
 	let check = true;
 	if(!checkNome()) check=false;
@@ -178,6 +179,7 @@ function check(obj){
 	if(check)obj.submit();
 }
 
+//Completa registrazione
 function check2(obj){
 	let check = true;
 	if(!checkCods()) check=false;

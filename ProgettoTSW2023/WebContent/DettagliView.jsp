@@ -2,6 +2,8 @@
 
     pageEncoding="UTF-8"%>
 
+<!-- estrae gli oggetti "prodotto", "prodotti" 
+e "comms" dallo scope della richiesta e li assegna a variabili corrispondenti. -->
     <%
 
         ProdottoBean prodotto = (ProdottoBean) request.getAttribute("prodotto");
@@ -24,9 +26,9 @@
 
   <link rel="icon" type="image/png" href="img/favicon.png" />
 
-  <link rel="stylesheet" href="prodotto.css">
+  <link rel="stylesheet" href="css/prodotto.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <title>MobileWorld: Dettagli <%= prodotto.getDescrizione() %></title>
 
@@ -58,7 +60,7 @@
 
                   <div class="img-showcase">
 
-                    <img src="<%= prodotto.getPath() %>" alt="shoe image">
+                    <img src="<%= prodotto.getPath() %>" alt="immagine prodotto">
 
                   </div>
 
@@ -258,24 +260,6 @@
           <% } %>
 
         </div>
-
-        
-
-        <div id="hideLink" style="display: none;">
-
-          <a id="hide" href="">Nascondi</a>
-
-        </div>
-
-        <script type="text/javascript">
-
-          $('#hide').click(function() {
-
-            $('#allCom').css("display", "none");
-
-          });
-
-        </script>
 
       </div>
 

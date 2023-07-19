@@ -31,6 +31,8 @@
 	<h2>Carrello</h2>
 	<div style="margin: 0 5px 0 0;text-align:right;position:relative;top:90%;">Prezzo</div>
 	
+	<!-- recupera gli oggetti del carrello dal carrello corrente e li itera utilizzando un ciclo for-each. 
+	Per ogni oggetto nel carrello, viene estratto il bean del prodotto associato. -->
 	<%
 			List<ProdottoCarrello> prodcarr = carrello.getAllItem();
 			DecimalFormat df = new DecimalFormat("###.##");
@@ -38,7 +40,7 @@
 			for(ProdottoCarrello beancart: prodcarr){
 				ProdottoBean bean = beancart.getProdotto();
 			
-		%>
+		%> 
 	<hr>
 	<div class="cartblock">
 	<div class="imageCarrello"><img src="<%=bean.getPath()%>" alt = "Immagine carrello" style="float: left;" width="256px" height="256px"></div>

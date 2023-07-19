@@ -38,7 +38,7 @@
 		%>
 	<div class="product">
 		<h3><%=bean.getNome()%></h3>
-		<img src="<%=bean.getPath()%>" alt= "Immagine profilo Admin" style="display: inline-block;" width="256px" height="256px">
+		<img src="<%=bean.getPath()%>" alt= "Immagine prodotto Admin" style="display: inline-block;" width="256px" height="256px">
 		<div class="prezzo">€<%=bean.getPrezzo()%></div>		
 		<div class="iconDelete"><a href="./admin?op=elimina&id=<%=bean.getIdProdotto()%>"><button onclick="reload()"><img src="img/delete.png" alt="Immagine rimozione"></button></a></div>
 		<div class="iconModify"><a href="./admin?op=modProd&id=<%=bean.getIdProdotto() %>"><button ><img src="img/Modifica.png" alt = "Immagine modifica" class="image"></button></a></div>

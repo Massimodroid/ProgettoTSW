@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	<!-- controllo sulla presenza dei prodotti nella lista prodotti. Se la lista è nulla, 
+	viene reindirizzato l'utente alla pagina del catalogo. Successivamente, viene assegnato 
+	il valore dell'attributo "index" presente nella sessione alla variabile index. -->
+	
 	<%
 	ArrayList<?> prodotti = (ArrayList<?>) request.getAttribute("prodotti");
 	if(prodotti == null){
@@ -31,13 +35,11 @@
 
 	<div class="slideshow-container">
 		<div class="sliderPreferences">
+			
 			<div class="mySlides fade">
-				
-				<a href="pagina_destinazione.html">
-  <img src="./img-banner/banner1.jpg" alt="banner iphone" height="400" width="100%">
-</a>	
-			</div>
-					
+				<img src="./img-banner/banner1.jpg" alt="banner iphone" height="400" width="100%">
+			</div>	
+			
 			<div class="mySlides fade">
 				<img src="./img-banner/banner2.jpg" alt= "banner samsung" height="400" width="100%">
 			</div>
@@ -76,6 +78,7 @@
 	<div class="content">
 	<br>
 	<h2>Most Wanted</h2>
+	<br>
 	<div class="prodotti">
 	<%
 				Random random = new Random();

@@ -89,8 +89,8 @@
 		<div class="ricercaPerData" id="ricercaPerData">
 			<form action="./ordiniAdmin" method="get" id="formRicercaData" class="contenitoreForm">
 				<label for="data1">Inserisci intervallo data</label><br>
-				<input type="date" id="data1" name="data1"><br>
-				<input type="date" name="data2"><br>
+				<input type="date" id = "data1" name="data1"><br>
+				<input type="date" id = "data2" name="data2"><br>
 				<button type="submit" class="btnCerca">Cerca</button>
 				<input type="hidden" name="op" value="ricercaD">
 				<button type="button"id="chiudiData" class="btnChiudi">Chiudi</button>
