@@ -144,7 +144,7 @@
 		</div>
 
 <br>
-	<h2>Catalogo</h2>
+	<h2>Brand</h2>
 <br>
 <div class="gallery">
 	<div class="gallery__column">
